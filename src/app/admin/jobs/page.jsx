@@ -93,19 +93,26 @@ const Home = () => {
     const [com,setCom] = useState(1);
     return (
         <>
-            <div className='flex justify-between text-white pb-[12px] '>
+            <div className='flex justify-between text-white  '>
                 <div>
-                    <div className='bg-gray-800 flex hover:bg-[#00d8ff] hover:text-white  justify-center items-center text-xl rounded-md h-[40px] w-[40px] hover:bg'>
-                        <span>←</span>
+                    <div className='bg-gray-800 flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-md h-[40px] w-[40px] 
+                    border-[1px] border-gray-800 hover:border-[#00d8ff] hover:text-[#00d8ff]
+
+                    
+                    
+                    '>
+                        <span className=''>
+                            <BackBlack />
+                        </span>
                     </div>
 
                 </div>
                 <div>
-                    <div className="relative inline-block text-left w-52">
+                    <div className="relative inline-block text-left w-52 mr-[40]">
                         {/* Dropdown Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="bg-gray-800 text-white h-[40px] px-[12px] rounded-md flex items-center hover:bg-gray-700 border border-white hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between"
+                            className={`bg-gray-800 text-white h-[40px] px-[12px] rounded-md flex items-center hover:bg-gray-700 border-2 border-gray-800  hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff]' : ''}`}
                         >
                             <span>
                                 {
@@ -113,21 +120,16 @@ const Home = () => {
                                 }
                             
                             </span>
-                            <svg
-                                className={`ml-2 h-5 w-5 transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.06 1.06l-4 4a.75.75 0 01-1.06 0l-4-4a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-                            </svg>
+                            <span>
+                                <DropDownSvg />
+                            </span>
                         </button>
 
                         {/* Dropdown Menu */}
                         {isOpen && (
-                            <div className="absolute  mt-2 w-[200px] bg-gray-800 text-white rounded-md shadow-lg">
+                            <div className="absolute  mt-2 w-[200px] bg-gray-800 text-white rounded-md shadow-lg border-2 border-gray-700">
                                 <ul className="py-1">
-                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer"
+                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer "
                                     onClick={()=>{setCom(1)
                                         setIsOpen(false)
                                     }}
@@ -227,7 +229,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="bg-[#0F172A] border-2 overflow-auto border-white rounded-md w-[53%]">
+                <div className="bg-[#0F172A] border-2 overflow-auto border-white rounded-[16px] w-[48%]">
                     {/* <Resume resume={resume} /> */}
                     {
                      com==1 ? <Resume resume={resume} /> : com==2 ?  <ContactTable /> : com==3 ?
@@ -272,7 +274,7 @@ const Resume = ({ resume }) => {
 
                                                         return (
                                                             <>
-                                                                <div className='bg-[#020617] flex p-[12px] rounded-2xl w-full  flex-col'>
+                                                                <div className='bg-[#020617] flex p-[12px] rounded-[8px] w-full  flex-col'>
                                                                     <span>{it.period}</span>
                                                                     {it.clg && <span>{it.clg}</span>}
                                                                     {it.board && <span>{it.board}</span>}
@@ -391,6 +393,62 @@ const ContactTable = () => {
     
     );
   }
+
+  const BackBlack = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        width="20"
+        height="20"
+        viewBox="0 0 150 149.999998"
+        preserveAspectRatio="xMidYMid meet"
+        zoomAndPan="magnify"
+        version="1.0"
+           fill="currentColor"
+    >
+        <defs>
+            <clipPath id="f6c41cb16c">
+                <path d="M 1 18 L 149.625 18 L 149.625 132.949219 L 1 132.949219 Z M 1 18 " clipRule="nonzero" />
+            </clipPath>
+        </defs>
+        <g clipPath="url(#f6c41cb16c)">
+            <path
+                // fill="#000000"
+                d="M 149.574219 85.664062 C 149.574219 111.738281 128.296875 132.953125 102.144531 132.953125 L 67.960938 132.953125 C 63.480469 132.953125 59.847656 129.328125 59.847656 124.859375 C 59.847656 121.539062 61.855469 118.6875 64.722656 117.441406 C 65.710938 117.011719 66.8125 116.773438 67.960938 116.773438 L 102.144531 116.773438 C 119.347656 116.773438 133.34375 102.816406 133.34375 85.667969 C 133.34375 68.511719 119.347656 54.558594 102.144531 54.558594 L 52.121094 54.558594 L 52.121094 68.789062 C 52.121094 72.273438 49.246094 74.761719 46.121094 74.746094 C 45.136719 74.742188 44.125 74.488281 43.175781 73.941406 L 4.394531 51.617188 C 0.417969 49.328125 0.417969 43.605469 4.394531 41.316406 L 43.175781 18.996094 C 47.148438 16.707031 52.121094 19.570312 52.121094 24.148438 L 52.121094 38.378906 L 102.148438 38.378906 C 128.300781 38.378906 149.574219 59.589844 149.574219 85.664062 Z M 149.574219 85.664062 "
+                fillOpacity="1"
+                fillRule="nonzero"
+            />
+        </g>
+    </svg>
+);
+
+const DropDownSvg = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 150 149.999998"
+        preserveAspectRatio="xMidYMid meet"
+        zoomAndPan="magnify"
+        version="1.0"
+           fill="currentColor"
+    >
+        <defs>
+            <clipPath id="ef42b1c745">
+                <path d="M 0.371094 30 L 149.621094 30 L 149.621094 119.957031 L 0.371094 119.957031 Z M 0.371094 30 " clipRule="nonzero" />
+            </clipPath>
+        </defs>
+        <g clipPath="url(#ef42b1c745)">
+            <path
+                // fill="#00d8ff"
+                d="M 149.457031 45.734375 L 75.242188 119.945312 L 0.519531 45.21875 L 15.710938 30.023438 L 75.242188 89.554688 L 134.261719 30.539062 L 149.457031 45.734375 "
+                fillOpacity="1"
+                fillRule="nonzero"
+            />
+        </g>
+    </svg>
+);
+
   
 
 export default Home
