@@ -252,7 +252,7 @@ const Resume = ({ resume }) => {
 
     return (
         <>
-            <div className='w-full p-4'>
+            <div className='w-full p-[12px]'>
                 <div className="flex flex-col space-y-[12px] w-full">
                     {
                         resume.map((ele) => {
