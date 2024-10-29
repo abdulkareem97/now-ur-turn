@@ -364,7 +364,7 @@ const ChatConversion = () => {
 const ContactTable = () => {
     return (
         <div className="overflow-auto">
-        <table className="min-w-full bg-[#020617] rounded-lg border border-gray-700">
+        <table className="min-w-full bg-[#0F172A] rounded-lg border border-gray-700">
             <thead>
                 <tr className="h-[40px]">
                     <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">Email</th>
@@ -376,7 +376,7 @@ const ContactTable = () => {
             </thead>
             <tbody>
                 {[...Array(24)].map((_, i) => {
-                    let color = i % 2 === 0 ? 'bg-[#161923]' : 'bg-[#020617]';
+                    let color = i % 2 === 0 ? 'bg-[#020617]' : 'bg-[#0F172A]';
                     return (
                         <tr key={i} className={`${color} h-[40px]`}>
                             <td className="px-6 py-4 border-r border-b border-gray-700"></td>
