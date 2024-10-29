@@ -73,7 +73,7 @@ export default function Layout({ children }) {
                         <h1 className="text-yellow-500 text-[19px] text-center font-semibold" style={{ color: "#ffe683" }}>
                             #A00000369
                         </h1>
-                        <div className="content px-[40px]">
+                        <div className="content px-[40px] mt-[40px] ">
                             {children}
                         </div>
                     </main>

@@ -93,9 +93,9 @@ const Home = () => {
     const [com,setCom] = useState(1);
     return (
         <>
-            <div className='flex justify-between text-white '>
+            <div className='flex justify-between text-white pb-[12px] '>
                 <div>
-                    <div className='bg-gray-800 p-2 px-4 text-xl rounded-md'>
+                    <div className='bg-gray-800 flex hover:bg-[#00d8ff] hover:text-white  justify-center items-center text-xl rounded-md h-[40px] w-[40px] hover:bg'>
                         <span>←</span>
                     </div>
 
@@ -105,7 +105,7 @@ const Home = () => {
                         {/* Dropdown Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="bg-gray-800 text-white px-4 py-2 rounded-md flex items-center hover:bg-gray-700 focus:outline-none w-52 justify-between"
+                            className="bg-gray-800 text-white h-[40px] px-[12px] rounded-md flex items-center hover:bg-gray-700 border border-white hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between"
                         >
                             <span>
                                 {
@@ -125,7 +125,7 @@ const Home = () => {
 
                         {/* Dropdown Menu */}
                         {isOpen && (
-                            <div className="absolute  mt-2 w-52 bg-gray-800 text-white rounded-md shadow-lg">
+                            <div className="absolute  mt-2 w-[200px] bg-gray-800 text-white rounded-md shadow-lg">
                                 <ul className="py-1">
                                     <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer"
                                     onClick={()=>{setCom(1)
@@ -151,14 +151,17 @@ const Home = () => {
 
 
             </div>
-            <div className='mt-[12px] flex space-x-[40px] text-white text-[20px]'>
-                <div className="bg-[#0F172A] border border-white rounded-md w-[48%]">
-                    <div className='flex p-4 space-x-[10px] w-full'>
-                        <div className="w-[150px]">
+            <div className='mt-[12px] flex space-x-[40px] text-white text-[20px] h-[73vh]'>
+                <div className="bg-[#0F172A] border-2 border-white rounded-[16px] w-[48%] 
+                overflow-auto pb-[12px]
+                ">
+                    <div className='flex p-[12px] space-x-[12px] w-full'>
+                        <div className="w-[150px] h-[150px] rounded-full overflow-hidden">
                             <img src={userData.photoUrl}
                                 // width={'60px'}
                                 // height={'30px'}
-                                className='rounded-full object-cover h-[150px] w-[150px] '
+                                className=' object-cover h-[150px] w-[150px] '
+                                // style={{borderRight:'100%'}}
                             />
 
                         </div>
@@ -169,8 +172,8 @@ const Home = () => {
 
                                     return (
                                         <>
-                                            <div className='bg-[#020617] flex p-2 rounded-2xl w-full'>
-                                                <span className="text-[#ffe683] px-2 py-1 w-[130px]">
+                                            <div className='bg-[#020617] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
+                                                <span className="text-[#ffe683]  w-[130px]">
                                                     {ele.label}
                                                 </span>
                                                 <span className='px-4'>
@@ -199,8 +202,8 @@ const Home = () => {
 
                                     return (
                                         <>
-                                            <div className='bg-[#020617] flex p-2 rounded-2xl w-full'>
-                                                <span className="text-[#ffe683] px-2 py-1 w-[130px]">
+                                            <div className='bg-[#020617] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
+                                                <span className="text-[#ffe683]  w-[130px]">
                                                     {ele.label}
                                                 </span>
                                                 <span className='px-4'>
@@ -224,7 +227,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="bg-[#0F172A] border border-white rounded-md w-[48%]">
+                <div className="bg-[#0F172A] border-2 overflow-auto border-white rounded-md w-[53%]">
                     {/* <Resume resume={resume} /> */}
                     {
                      com==1 ? <Resume resume={resume} /> : com==2 ?  <ContactTable /> : com==3 ?
@@ -258,7 +261,7 @@ const Resume = ({ resume }) => {
                             if (ele.label == 'Educational Qualifications' || ele.label == 'Job Experience') {
                                 return (
                                     <>
-                                        <div className='px-2'>
+                                        <div className=''>
                                             <div className="text-[#ffe683]">
                                                 <span className="">{ele.label}</span>
                                             </div>
@@ -269,7 +272,7 @@ const Resume = ({ resume }) => {
 
                                                         return (
                                                             <>
-                                                                <div className='bg-[#020617] flex p-3 rounded-2xl w-full flex flex-col'>
+                                                                <div className='bg-[#020617] flex p-[12px] rounded-2xl w-full  flex-col'>
                                                                     <span>{it.period}</span>
                                                                     {it.clg && <span>{it.clg}</span>}
                                                                     {it.board && <span>{it.board}</span>}
@@ -294,7 +297,7 @@ const Resume = ({ resume }) => {
 
                                 return (
                                     <>
-                                        <div className='px-2'>
+                                        <div className=''>
                                             <div className="text-[#ffe683]">
                                                 <span className="">{ele.label}</span>
                                             </div>
@@ -304,7 +307,7 @@ const Resume = ({ resume }) => {
 
 
                                                 <>
-                                                    <div className='bg-[#020617] flex p-3 rounded-2xl w-full flex flex-col'>
+                                                    <div className='bg-[#020617] rounded-[6px] h-[40px] w-full flex flex-col justify-center px-[12px]'>
                                                         <span>{ele.value.join(', ')}</span>
 
 
@@ -319,8 +322,8 @@ const Resume = ({ resume }) => {
 
                             return (
                                 <>
-                                    <div className='bg-[#020617] flex p-2 rounded-2xl w-full'>
-                                        <span className="text-[#ffe683] px-2 py-1 w-[130px]">
+                                    <div className='bg-[#020617] flex rounded-[8px] w-full h-[40px] items-center px-[12px]'>
+                                        <span className="text-[#ffe683]  w-[130px]">
                                             {ele.label}
                                         </span>
                                         <span className='px-4'>
@@ -358,37 +361,34 @@ const ChatConversion = () => {
 
 const ContactTable = () => {
     return (
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-[#020617]  rounded-lg">
-          <thead>
-            <tr>
-              <th className="px-6 py-3 text-[#ffe683] border-b border-gray-700">Email</th>
-              <th className="px-6 py-3 text-[#ffe683] border-b border-gray-700">Contact</th>
-              <th className="px-6 py-3 text-[#ffe683] border-b border-gray-700">LinkedIn</th>
-              <th className="px-6 py-3 text-[#ffe683] border-b border-gray-700">GitHub</th>
-              <th className="px-6 py-3 text-[#ffe683] border-b border-gray-700">Website</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* Placeholder rows */}
-            {[...Array(24)].map((_, i) => 
-                {
-                    let color = i%2==0 ? 'bg-[#161923]' : 'bg-[#020617]'
+        <div className="overflow-auto">
+        <table className="min-w-full bg-[#020617] rounded-lg border border-gray-700">
+            <thead>
+                <tr className="h-[40px]">
+                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">Email</th>
+                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">Contact</th>
+                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">LinkedIn</th>
+                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">GitHub</th>
+                    <th className="px-6 py-3 text-[#ffe683] border-b border-gray-700">Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                {[...Array(24)].map((_, i) => {
+                    let color = i % 2 === 0 ? 'bg-[#161923]' : 'bg-[#020617]';
                     return (
-
-                        <tr key={i} className={`${color}`}>
-                        <td className="px-6 py-4 border-b border-gray-700"></td>
-                        <td className="px-6 py-4 border-b border-gray-700"></td>
-                        <td className="px-6 py-4 border-b border-gray-700"></td>
-                        <td className="px-6 py-4 border-b border-gray-700"></td>
-                        <td className="px-6 py-4 border-b border-gray-700"></td>
+                        <tr key={i} className={`${color} h-[40px]`}>
+                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
+                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
+                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
+                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
+                            <td className="px-6 py-4 border-b border-gray-700"></td>
                         </tr>
-                    )
-                }
-            )}
-          </tbody>
+                    );
+                })}
+            </tbody>
         </table>
-      </div>
+    </div>
+    
     );
   }
   
