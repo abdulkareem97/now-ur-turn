@@ -10,6 +10,11 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        darkBg: '#101114',   // Background color
+        cardBg: '#181A1F',    // Card background color
+        accent: '#FFD700',    // Accent color for highlights
+        textPrimary: '#FFFFFF',  // Primary text color
+        textSecondary: '#A0AEC0', // Secondary text color
       },
     },
   },

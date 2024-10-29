@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ text-decoration: none;
+ list-style:none;
+ font-size: 14px;
+ font-family: Roboto, monospace;
+}
+
+:root {
+    --primary-color: "#020617"
+    --secondary-color: "#0f172a"
+    --tertiary-color: "#1e293b"
+    --head-text: 21px
+    --sub-head-text: 19px
+    --normal-text: 15px
+} 
+
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    font-size: var(--normal-text);
+    color: white;   
+}
+
+.button {
+    height: 40px;
+    font-weight: 600;
+    width: 200px;
+    background-color:#0f172a; 
+    text-align: start;
+    border-radius: 8px;
+    color: #fff; /* Text color */
+    padding: 0px 12px;
+    border: none; /* No border by default */
+    cursor: pointer; /* Pointer on hover */
+    display: block;
+}
+
+.button.selected {
+    color: #000; /* Text color remains black */
+    background-color: #fff; /* Background becomes white */
+}
+
+.button:hover {
+  border: 2px solid #00d8ff; /* Adds border on hover */
+  color: #00d8ff; /* Change text color */
+}
+
+.button:active {
+    color: #000; /* Changes text color on click */
+    background-color: #00d8ff; /* Changes background to blue */
+    transform: scale(0.98); /* Slightly reduces size for a click effect */
+}
+
+
+.dropdown{
+    width: 100px;
+    border: 1px solid rgba(255,255,255,0.1); /* Adds border on hover */
+    margin-top: .5rem;
+    max-height: 50%;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px;
+}
+
+.dropdown-item:hover {
+  color: skyblue;
+}
+.dropdown-item:active{
+  color: #00d8ff; /* Change text color */
+}
