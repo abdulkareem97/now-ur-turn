@@ -112,7 +112,7 @@ const Home = () => {
 
                 </div>
                 <div>
-                    <div className="relative inline-block text-left w-52 mr-[26px]">
+                    <div className="relative inline-block text-left ">
                         {/* Dropdown Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
@@ -314,7 +314,7 @@ const Resume = ({ resume }) => {
 
 
                                                 <>
-                                                    <div className='bg-[#020617] rounded-[6px] h-[40px] w-full flex flex-col justify-center px-[12px]'>
+                                                    <div className='bg-[#0D0D19] rounded-[6px] h-[40px] w-full flex flex-col justify-center px-[12px]'>
                                                         <span>{ele.value.join(', ')}</span>
 
 
@@ -329,7 +329,7 @@ const Resume = ({ resume }) => {
 
                             return (
                                 <>
-                                    <div className='bg-[#020617] flex rounded-[8px] w-full h-[40px] items-center px-[12px]'>
+                                    <div className='bg-[#0D0D19] flex rounded-[8px] w-full h-[40px] items-center px-[12px]'>
                                         <span className="text-[#FFE683]  w-[110px]">
                                             {ele.label}
                                         </span>

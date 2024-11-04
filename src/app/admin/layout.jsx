@@ -40,7 +40,7 @@ export default function Layout({ children }) {
 
     return (
       
-<>               <nav className="flex fixed bg-[#1C202C] justify-start items-center h-[50px] w-screen px-[12px] ">
+<>               <nav className="flex fixed bg-[#1C202C] justify-start items-center h-[50px] w-screen px-[24px] ">
                     <div className="h-10 w-10 overflow-hidden">
                         <Image
                             src="/static/assets/logo.png"
@@ -56,7 +56,7 @@ export default function Layout({ children }) {
                 </nav>
                 <section className="flex pt-[50px] h-screen w-full">
                     <div className='overflow-auto'>
-                        <aside id="ps" className="bg-secondary w-[224px] text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
+                        <aside id="ps" className="bg-[#1C202C] w-[224px] text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
                             {primarySidebarLinks.map((link) => (
                                 <Link key={link.url} href={link.url} passHref>
                                     <button
