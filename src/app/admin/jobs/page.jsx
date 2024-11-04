@@ -95,8 +95,8 @@ const Home = () => {
         <>
             <div className='flex justify-between text-white  '>
                 <div>
-                    <div className='bg-gray-800 flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-md h-[40px] w-[40px] 
-                    border-[1px] border-gray-800 hover:border-[#00d8ff] hover:text-[#00d8ff]
+                    <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
+                    border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
 
                     
                     
@@ -108,11 +108,11 @@ const Home = () => {
 
                 </div>
                 <div>
-                    <div className="relative inline-block text-left w-52 mr-[40]">
+                    <div className="relative inline-block text-left w-52 mr-[26px]">
                         {/* Dropdown Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className={`bg-gray-800 text-white h-[40px] px-[12px] rounded-md flex items-center hover:bg-gray-700 border-2 border-gray-800  hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff]' : ''}`}
+                            className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center hover:bg-gray-700 border-2 border-gray-800  hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff]' : ''}`}
                         >
                             <span>
                                 {
@@ -127,7 +127,7 @@ const Home = () => {
 
                         {/* Dropdown Menu */}
                         {isOpen && (
-                            <div className="absolute  mt-2 w-[200px] bg-gray-800 text-white rounded-md shadow-lg border-2 border-gray-700">
+                            <div className="absolute  mt-[12px] w-[200px] bg-gray-800 text-white rounded-[8px] shadow-lg border-2 border-gray-700">
                                 <ul className="py-1">
                                     <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer "
                                     onClick={()=>{setCom(1)
@@ -154,11 +154,11 @@ const Home = () => {
 
             </div>
             <div className='mt-[12px] flex space-x-[40px] text-white text-[20px] h-[73vh]'>
-                <div className="bg-[#0F172A] border-2 border-white rounded-[16px] w-[48%] 
+                <div className="bg-[#1C202C] border-2 border-[#FFFFFF] rounded-[16px] w-[50%] 
                 overflow-auto pb-[12px]
                 ">
                     <div className='flex p-[12px] space-x-[12px] w-full'>
-                        <div className="w-[150px] h-[150px] rounded-full overflow-hidden">
+                        <div className="min-w-[144px] h-[144px] rounded-full overflow-hidden">
                             <img src={userData.photoUrl}
                                 // width={'60px'}
                                 // height={'30px'}
@@ -174,8 +174,8 @@ const Home = () => {
 
                                     return (
                                         <>
-                                            <div className='bg-[#020617] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
-                                                <span className="text-[#ffe683]  w-[130px]">
+                                            <div className='bg-[#0D0D19] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
+                                                <span className="text-[#FFE683]  w-[110px]">
                                                     {ele.label}
                                                 </span>
                                                 <span className='px-4'>
@@ -197,15 +197,15 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='w-full'>
-                        <div className="flex flex-col space-y-[12px] w-full px-4">
+                        <div className="flex flex-col space-y-[12px] w-full px-[12px]">
                             {
                                 profile.map((ele) => {
                                     // const status = ele.value=='Active' 
 
                                     return (
                                         <>
-                                            <div className='bg-[#020617] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
-                                                <span className="text-[#ffe683]  w-[130px]">
+                                            <div className='bg-[#0D0D19] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
+                                                <span className="text-[#FFE683]  w-[130px]">
                                                     {ele.label}
                                                 </span>
                                                 <span className='px-4'>
@@ -229,7 +229,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="bg-[#0F172A] border-2 overflow-auto border-white rounded-[16px] w-[48%]">
+                <div className="bg-[#1C202C] border-2 overflow-auto border-[#FFFFFF] rounded-[16px] w-[50%]">
                     {/* <Resume resume={resume} /> */}
                     {
                      com==1 ? <Resume resume={resume} /> : com==2 ?  <ContactTable /> : com==3 ?
@@ -264,7 +264,7 @@ const Resume = ({ resume }) => {
                                 return (
                                     <>
                                         <div className=''>
-                                            <div className="text-[#ffe683]">
+                                            <div className="text-[#FFE683]">
                                                 <span className="">{ele.label}</span>
                                             </div>
                                             <div className='space-y-[12px] mt-[6px]'>
@@ -274,7 +274,7 @@ const Resume = ({ resume }) => {
 
                                                         return (
                                                             <>
-                                                                <div className='bg-[#020617] flex p-[12px] rounded-[8px] w-full  flex-col'>
+                                                                <div className='bg-[#0D0D19] flex p-[12px] rounded-[8px] w-full  flex-col'>
                                                                     <span>{it.period}</span>
                                                                     {it.clg && <span>{it.clg}</span>}
                                                                     {it.board && <span>{it.board}</span>}
@@ -300,7 +300,7 @@ const Resume = ({ resume }) => {
                                 return (
                                     <>
                                         <div className=''>
-                                            <div className="text-[#ffe683]">
+                                            <div className="text-[#FFE683]">
                                                 <span className="">{ele.label}</span>
                                             </div>
                                             <div className='space-y-[12px] mt-[6px]'>
@@ -325,7 +325,7 @@ const Resume = ({ resume }) => {
                             return (
                                 <>
                                     <div className='bg-[#020617] flex rounded-[8px] w-full h-[40px] items-center px-[12px]'>
-                                        <span className="text-[#ffe683]  w-[130px]">
+                                        <span className="text-[#FFE683]  w-[130px]">
                                             {ele.label}
                                         </span>
                                         <span className='px-4'>
@@ -354,7 +354,7 @@ const ChatConversion = () => {
     return (
         <>
             <div className=' w-full h-full flex justify-center items-center'>
-                <span className='text-[#5779c5]'>Not yet started</span>
+                <span className='text-[#6290C0]'>Not yet started</span>
 
             </div>
         </>
@@ -364,14 +364,14 @@ const ChatConversion = () => {
 const ContactTable = () => {
     return (
         <div className="overflow-auto">
-        <table className="min-w-full bg-[#0F172A] rounded-lg border border-gray-700">
+        <table className="min-w-full bg-[#0F172A] rounded-lg border border-[#2A2F41]">
             <thead>
                 <tr className="h-[40px]">
-                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">Email</th>
-                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">Contact</th>
-                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">LinkedIn</th>
-                    <th className="px-6 py-3 text-[#ffe683] border-r border-b border-gray-700">GitHub</th>
-                    <th className="px-6 py-3 text-[#ffe683] border-b border-gray-700">Website</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Email</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Contact</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">LinkedIn</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">GitHub</th>
+                    <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41]">Website</th>
                 </tr>
             </thead>
             <tbody>
@@ -379,11 +379,11 @@ const ContactTable = () => {
                     let color = i % 2 === 0 ? 'bg-[#020617]' : 'bg-[#0F172A]';
                     return (
                         <tr key={i} className={`${color} h-[40px]`}>
-                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
-                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
-                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
-                            <td className="px-6 py-4 border-r border-b border-gray-700"></td>
-                            <td className="px-6 py-4 border-b border-gray-700"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
+                            <td className="px-[12px]  border-b border-[#2A2F41]"></td>
                         </tr>
                     );
                 })}
