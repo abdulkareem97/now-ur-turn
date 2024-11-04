@@ -40,7 +40,7 @@ export default function Layout({ children }) {
 
     return (
       
-<>               <nav className="flex fixed bg-tertiary justify-start items-center h-[50px] w-screen px-3 ">
+<>               <nav className="flex fixed bg-[#1C202C] justify-start items-center h-[50px] w-screen px-[12px] ">
                     <div className="h-10 w-10 overflow-hidden">
                         <Image
                             src="/static/assets/logo.png"
@@ -50,13 +50,13 @@ export default function Layout({ children }) {
                             height={40}
                         />
                     </div>
-                    <h1 className="font-bold text-[21px]">
-                        Now<span className="text-pink-500 text-[21px]">Ur</span>Turn
+                    <h1 className="font-semibold text-[20px] px-[6px]">
+                        Now<span className="text-pink-500 text-[20px]">Ur</span>Turn
                     </h1>
                 </nav>
                 <section className="flex pt-[50px] h-screen w-full">
                     <div className='overflow-auto'>
-                        <aside id="ps" className="bg-secondary w-[270px] px-3 h-full py-10 overflow-y-auto space-y-2">
+                        <aside id="ps" className="bg-secondary w-[224px] text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
                             {primarySidebarLinks.map((link) => (
                                 <Link key={link.url} href={link.url} passHref>
                                     <button
@@ -69,11 +69,11 @@ export default function Layout({ children }) {
                             ))}
                         </aside>
                     </div>
-                    <main className="w-full py-10 ">
-                        <h1 className="text-yellow-500 text-[19px] text-center font-semibold" style={{ color: "#ffe683" }}>
+                    <main className="w-full py-[40px] bg-[#0D0D19]">
+                        <h1 className="text-[#FFE683] text-[16px] text-center font-semibold" style={{ color: "#ffe683" }}>
                             #A00000369
                         </h1>
-                        <div className="content px-[40px] mt-[40px] ">
+                        <div className="content px-[40px] mt-[60px] ">
                             {children}
                         </div>
                     </main>

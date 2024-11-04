@@ -93,7 +93,11 @@ const Home = () => {
     const [com,setCom] = useState(1);
     return (
         <>
-            <div className='flex justify-between text-white  '>
+         {isOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-10"></div>
+            )}
+            <div className="relative z-20">
+            <div className='flex justify-between text-white  text-[14px]'>
                 <div>
                     <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
                     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
@@ -127,7 +131,7 @@ const Home = () => {
 
                         {/* Dropdown Menu */}
                         {isOpen && (
-                            <div className="absolute  mt-[12px] w-[200px] bg-gray-800 text-white rounded-[8px] shadow-lg border-2 border-gray-700">
+                            <div className="absolute z-30 mt-[12px] w-[200px] bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700">
                                 <ul className="py-1">
                                     <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer "
                                     onClick={()=>{setCom(1)
@@ -205,10 +209,10 @@ const Home = () => {
                                     return (
                                         <>
                                             <div className='bg-[#0D0D19] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
-                                                <span className="text-[#FFE683]  w-[130px]">
+                                                <span className="text-[#FFE683]  w-[110px]">
                                                     {ele.label}
                                                 </span>
-                                                <span className='px-4'>
+                                                <span className='px-[6px]'>
                                                     :
                                                 </span>
                                                 <span className="">
@@ -242,6 +246,7 @@ const Home = () => {
 
 
 
+            </div>
             </div>
         </>
     )
@@ -325,10 +330,10 @@ const Resume = ({ resume }) => {
                             return (
                                 <>
                                     <div className='bg-[#020617] flex rounded-[8px] w-full h-[40px] items-center px-[12px]'>
-                                        <span className="text-[#FFE683]  w-[130px]">
+                                        <span className="text-[#FFE683]  w-[110px]">
                                             {ele.label}
                                         </span>
-                                        <span className='px-4'>
+                                        <span className='px-[6px]'>
                                             :
                                         </span>
                                         <span className="">
