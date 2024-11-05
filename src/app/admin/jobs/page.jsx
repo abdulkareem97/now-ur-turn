@@ -96,7 +96,7 @@ const Home = () => {
          {isOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-30 z-10"></div>
             )}
-            <div className="relative z-20">
+            <div className="relative ">
             <div className='flex justify-between text-white  text-[14px]'>
                 <div>
                     <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
@@ -116,7 +116,7 @@ const Home = () => {
                         {/* Dropdown Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center hover:bg-gray-700 border-2 border-gray-800  hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff]' : ''}`}
+                            className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center hover:bg-gray-700 hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''}`}
                         >
                             <span>
                                 {
@@ -133,17 +133,17 @@ const Home = () => {
                         {isOpen && (
                             <div className="absolute z-30 mt-[12px] w-[200px] bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700">
                                 <ul className="py-1">
-                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer "
+                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                     onClick={()=>{setCom(1)
                                         setIsOpen(false)
                                     }}
                                     >Resume</li>
-                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer"
+                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer"
                                      onClick={()=>{setCom(2)
                                         setIsOpen(false)
                                     }}
                                     >Data Access</li>
-                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#00d8ff] cursor-pointer"
+                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer"
                                      onClick={()=>{setCom(3)
                                         setIsOpen(false)
                                     }}
@@ -182,7 +182,7 @@ const Home = () => {
                                                 <span className="text-[#FFE683]  w-[110px]">
                                                     {ele.label}
                                                 </span>
-                                                <span className='px-4'>
+                                                <span className='px-[6px]'>
                                                     :
                                                 </span>
                                                 <span className="">

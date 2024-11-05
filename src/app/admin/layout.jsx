@@ -56,11 +56,11 @@ export default function Layout({ children }) {
                 </nav>
                 <section className="flex pt-[50px] h-screen w-full">
                     <div className='overflow-auto'>
-                        <aside id="ps" className="bg-[#1C202C] w-[224px] text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
+                        <aside id="ps" className="bg-[#1C202C] w-[256px] text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
                             {primarySidebarLinks.map((link) => (
                                 <Link key={link.url} href={link.url} passHref>
                                     <button
-                                        className={`button ${selected === link.url ? "selected" : ""}`}
+                                        className={`button mb-[8px] ${selected === link.url ? "selected" : ""}`}
                                         onClick={() => setSelected(link.url)}
                                     >
                                         {link.name}
