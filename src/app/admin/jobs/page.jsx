@@ -94,7 +94,7 @@ const Home = () => {
     return (
         <>
          {isOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-30 z-10"></div>
+                <div className="fixed inset-0 bg-black bg-opacity-60 z-10"></div>
             )}
             <div className="relative ">
             <div className='flex justify-between text-white  text-[14px]'>

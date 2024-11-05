@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const primarySidebarLinks = [
-    { name: "Dashboard", url: "" },
+    { name: "Dashboard", url: "/" },
     { name: "Product Category", url: "/product-category" },
     { name: "Contribution Community", url: "/contribution-community" },
     { name: "Discuss", url: "/discuss" },
@@ -31,8 +31,9 @@ const primarySidebarLinks = [
 
 export default function Layout({ children }) {
     const pathname = usePathname();
-    const [selected, setSelected] = useState("");
+    const [selected, setSelected] = useState('');
     console.log(selected)
+    console.log('pathname ',pathname)
 
     useEffect(() => {
         setSelected(pathname);
