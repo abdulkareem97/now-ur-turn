@@ -55,8 +55,8 @@ export default function Layout({ children }) {
                     </h1>
                 </nav>
                 <section className="flex pt-[50px] h-screen w-full">
-                    <div className='overflow-auto'>
-                        <aside id="ps" className="bg-[#1C202C] w-[256px] text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
+                    <div className='w-[224px]'>
+                        <aside id="ps" className="bg-[#1C202C]  text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
                             {primarySidebarLinks.map((link) => (
                                 <Link key={link.url} href={link.url} passHref>
                                     <button
