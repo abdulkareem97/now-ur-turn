@@ -124,7 +124,7 @@ const Home = () => {
                                 }
                             
                             </span>
-                            <span className={`${isOpen ? '' : ''} hover:text-[#00d8ff]`}>
+                            <span className={`${isOpen ? 'text-[#00d8ff]' : ''} hover:text-[#00d8ff]`}>
                                 <DropDownSvg />
                             </span>
                         </button>
@@ -133,17 +133,17 @@ const Home = () => {
                         {isOpen && (
                             <div className="absolute z-30 mt-[12px] w-[200px] bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700">
                                 <ul className="py-1">
-                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                    <li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                     onClick={()=>{setCom(1)
                                         setIsOpen(false)
                                     }}
                                     >Resume</li>
-                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer"
+                                    <li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer"
                                      onClick={()=>{setCom(2)
                                         setIsOpen(false)
                                     }}
                                     >Data Access</li>
-                                    <li className="px-4 py-2 hover:bg-gray-700 hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer"
+                                    <li className="px-[12px] py-2 hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer"
                                      onClick={()=>{setCom(3)
                                         setIsOpen(false)
                                     }}
