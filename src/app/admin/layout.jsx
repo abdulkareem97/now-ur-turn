@@ -10,34 +10,44 @@ import { useEffect, useState } from "react";
 
 const primarySidebarLinks = [
     { name: "Dashboard", url: "/" },
-    { name: "Product Category", url: "/product-category" },
-    { name: "Contribution Community", url: "/contribution-community" },
-    { name: "Discuss", url: "/discuss" },
-    { name: "Challenges", url: "/challenges" },
-    { name: "Jobs", url: "/jobs" },
-    { name: "Resume", url: "/resume" },
-    { name: "Recruiters", url: "/recruiters" },
-    { name: "Projects", url: "/projects" },
-    { name: "User Profiles", url: "/user-profiles" },
-    { name: "Pro Subscriptions", url: "/pro-subscriptions" },
-    { name: "Notifications", url: "/notifications" },
-    { name: "Certifications", url: "/certifications" },
-    { name: "Wallet", url: "/wallet" },
-    { name: "Support Requests", url: "/support-requests" },
-    { name: "Log History", url: "/log-history" },
-    { name: "Vouchers", url: "/vouchers" },
-    { name: "Panel Settings", url: "/panel-settings" },
+    { name: "Product Category", url: "/product-category/" },
+    { name: "Contribution Community", url: "/contribution-community/" },
+    { name: "Discuss", url: "/discuss/" },
+    { name: "Challenges", url: "/challenges/" },
+    { name: "Jobs", url: "/jobs/" },
+    { name: "Resume", url: "/resume/" },
+    { name: "Recruiters", url: "/recruiters/" },
+    { name: "Projects", url: "/projects/" },
+    { name: "User Profiles", url: "/user-profiles/" },
+    { name: "Pro Subscriptions", url: "/pro-subscriptions/" },
+    { name: "Notifications", url: "/notifications/" },
+    { name: "Certifications", url: "/certifications/" },
+    { name: "Wallet", url: "/wallet/" },
+    { name: "Support Requests", url: "/support-requests/" },
+    { name: "Log History", url: "/log-history/" },
+    { name: "Vouchers", url: "/vouchers/" },
+    { name: "Panel Settings", url: "/panel-settings/" },
 ].map(link => ({ ...link, url: `/admin${link.url}` }));
 
 export default function Layout({ children }) {
     const pathname = usePathname();
     const [selected, setSelected] = useState('');
-    console.log(selected)
-    console.log('pathname ',pathname)
+    // console.log(selected)
+    // console.log('pathname ',pathname)
 
     useEffect(() => {
+        if(pathname.endsWith('/'))
+        {
+            console.log('hetre')
+        }
         setSelected(pathname);
+        
+        console.log('pathname ',pathname)
     }, [pathname]);
+
+    useEffect(()=>{
+        console.log('selected ',selected)
+    },[selected])
 
     return (
       

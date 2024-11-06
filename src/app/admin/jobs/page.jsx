@@ -94,7 +94,7 @@ const Home = () => {
     return (
         <>
          {isOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-60 z-10"></div>
+                <div className="fixed inset-0 bg-black bg-opacity-60 z-10" onClick={()=>{setIsOpen(false)}}></div>
             )}
             <div className="relative ">
             <div className='flex justify-between text-white  text-[14px]'>
@@ -112,11 +112,11 @@ const Home = () => {
 
                 </div>
                 <div>
-                    <div className="relative inline-block text-left ">
+                    <div className="relative inline-block text-left z-20">
                         {/* Dropdown Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center hover:bg-gray-700 hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''}`}
+                            className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''}  `}
                         >
                             <span>
                                 {
@@ -124,7 +124,7 @@ const Home = () => {
                                 }
                             
                             </span>
-                            <span>
+                            <span className={`${isOpen ? '' : ''} hover:text-[#00d8ff]`}>
                                 <DropDownSvg />
                             </span>
                         </button>
@@ -166,7 +166,7 @@ const Home = () => {
                             <img src={userData.photoUrl}
                                 // width={'60px'}
                                 // height={'30px'}
-                                className=' object-cover h-[150px] w-[150px] '
+                                className=' object-cover w-[144px] h-[144px] '
                                 // style={{borderRight:'100%'}}
                             />
 
