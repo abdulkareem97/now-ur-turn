@@ -116,7 +116,7 @@ const Home = () => {
                         {/* Dropdown Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''}  `}
+                            className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''} group `}
                         >
                             <span>
                                 {
@@ -124,7 +124,7 @@ const Home = () => {
                                 }
                             
                             </span>
-                            <span className={`${isOpen ? 'text-[#00d8ff]' : ''} hover:text-[#00d8ff]`}>
+                            <span className={`${isOpen ? 'text-[#00d8ff]' : ''} group-hover:text-[#00d8ff]`}>
                                 <DropDownSvg />
                             </span>
                         </button>
