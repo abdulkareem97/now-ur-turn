@@ -38,20 +38,20 @@ export default function Layout({ children }) {
     useEffect(() => {
         if(pathname.endsWith('/'))
         {
-            console.log('hetre')
+            // console.log('hetre')
         }
         setSelected(pathname);
         
-        console.log('pathname ',pathname)
+        // console.log('pathname ',pathname)
     }, [pathname]);
 
     useEffect(()=>{
-        console.log('selected ',selected)
+        // console.log('selected ',selected)
     },[selected])
 
     return (
       
-<>               <nav className="flex fixed bg-[#1C202C] justify-start items-center h-[50px] w-screen px-[24px] ">
+<>               <nav className="flex fixed bg-[#1C202C] justify-start items-center h-[50px] w-screen px-[24px] z-10 ">
                     <div className="h-10 w-10 overflow-hidden">
                         <Image
                             src="/static/assets/logo.png"
@@ -65,7 +65,7 @@ export default function Layout({ children }) {
                         Now<span className="text-pink-500 text-[20px]">Ur</span>Turn
                     </h1>
                 </nav>
-                <section className="flex pt-[50px] h-screen w-full">
+                <section className="flex pt-[50px]  w-full">
                     <div className='w-[224px]'>
                         <aside id="ps" className="bg-[#1C202C]  text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
                             {primarySidebarLinks.map((link) => (

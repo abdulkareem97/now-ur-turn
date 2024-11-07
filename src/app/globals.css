@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* input container */
+.input-container{
+  @apply bg-[#0D0D19];
+}
+
+/* rounder-container */
+.rounder-container{
+  @apply rounded-[16px];
+}
+
+.rounded-box{
+  @apply rounded-[8px];
+}
+
+.input-search-width{
+  width: calc(100% - 24px);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

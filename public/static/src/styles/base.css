@@ -74,7 +74,7 @@ body {
 }
 
 .dropdown-item:hover {
-  color: skyblue;
+  color: #87ceeb;
 }
 .dropdown-item:active{
   color: #00d8ff; /* Change text color */
