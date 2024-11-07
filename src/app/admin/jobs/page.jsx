@@ -5,7 +5,7 @@ import ComJobTable from './ComJobTable'
 import ComAddJob from './ComAddJob'
 import ComGetJob from './ComGetJob'
 
-const page = () => {
+const Page = () => {
     const [renderComponent,setRenderComponent] = useState(1)
   return (
     <div>
@@ -17,4 +17,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
