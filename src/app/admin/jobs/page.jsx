@@ -6,7 +6,7 @@ import ComAddJob from './ComAddJob'
 import ComGetJob from './ComGetJob'
 
 const page = () => {
-    const [renderComponent,setRenderComponent] = useState(3)
+    const [renderComponent,setRenderComponent] = useState(1)
   return (
     <div>
         {
