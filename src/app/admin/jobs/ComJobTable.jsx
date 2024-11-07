@@ -101,6 +101,7 @@ const ComJobTable = ({setRenderComponent}) => {
                                             dropDownOption.map((ele,ind)=>{
                                                 return (
                                                     <li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                    key={ind}
                                                     onClick={() => {
                                                         setCom(ind)
                                                         setIsOpen(false)

@@ -312,7 +312,7 @@ const ComAddJob = ({setRenderComponent}) => {
 
                                                                                         getOptionValue[key + ' option'].map((ele, ind) => {
                                                                                             return (
-                                                                                                < li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                                                                <li key={key} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                     onClick={() => {
                                                                                                         getOptionValue[key + ' set'](ele)
                                                                                                         setIsOpen(false)
@@ -375,7 +375,7 @@ const ComAddJob = ({setRenderComponent}) => {
 
                                                                                             csearch.map((ele, ind) => {
                                                                                                 return (
-                                                                                                    < li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                                                                    <li key={key} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                         onClick={() => {
                                                                                                             setcountry(ele)
                                                                                                             setIsOpen(false)
@@ -433,7 +433,7 @@ const ComAddJob = ({setRenderComponent}) => {
 
                                                                                             ssearch.map((ele, ind) => {
                                                                                                 return (
-                                                                                                    < li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                                                                    <li key={ind} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                         onClick={() => {
                                                                                                             setstate(ele)
                                                                                                             setIsOpen(false)
@@ -491,7 +491,7 @@ const ComAddJob = ({setRenderComponent}) => {
 
                                                                                             dsearch.map((ele, ind) => {
                                                                                                 return (
-                                                                                                    < li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                                                                    <li key={ind} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                         onClick={() => {
                                                                                                             setdistrict(ele)
                                                                                                             setIsOpen(false)
@@ -550,7 +550,7 @@ const ComAddJob = ({setRenderComponent}) => {
 
                                                                                                 getOptionValue[key + ' option'].map((ele, ind) => {
                                                                                                     return (
-                                                                                                        < li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                                                                        <li key={key} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                             onClick={() => {
                                                                                                                 getOptionValue[key + ' set'](ele)
                                                                                                                 setIsOpen(false)
