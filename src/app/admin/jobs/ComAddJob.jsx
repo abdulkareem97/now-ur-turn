@@ -42,20 +42,48 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
     const [con,setCon] = useState([])
     const [sta,setSta]= useState([])
     const [dis,setDis] = useState([])
+    const [csearch, setCSearch] = useState([])
+    const [ssearch, setSSearch] = useState([])
+    const [dsearch, setDSearch] = useState([])
+    // const [csearch, setCSearch] = useState([...countries])
+    // const [ssearch, setSSearch] = useState([...states])
+    // const [dsearch, setDSearch] = useState([...districts])
+    const fetchData = async () => {
+        try {
+          const countryResult = await GetCountries();
+        //   console.log(countryResult,'\n\n\n\n\nhere')
+          setCon(countryResult);
+          setCSearch(countryResult)
+        } catch (error) {
+          console.error('Error fetching countries:', error);
+          // Handle error for countries (e.g., set an error state or display a message)
+        }
+      
+        try {
+          const stateResult = await GetState(countryid);
+          setSta(stateResult);
+          setSSearch(stateResult)
+        } catch (error) {
+          console.error('Error fetching states:', error);
+          // Handle error for states (e.g., set an error state or display a message)
+        }
+      
+        try {
+          const cityResult = await GetCity(countryid, stateid);
+          setDis(cityResult);
+          setDSearch(cityResult)
+        } catch (error) {
+          console.error('Error fetching cities:', error);
+          // Handle error for cities (e.g., set an error state or display a message)
+        }
+      };
     useEffect(() => {
+        fetchData()
        
         // GetCountries().then((result) => {
-        GetCountries().then((result) => {
-          setCon(result);
-        });
-        GetState(countryid).then((result) => {
-            setSta(result);
-          });
-          GetCity(countryid, stateid).then((result) => {
-            setDis(result);
-          });
+      
     
-      }, []);
+      }, [countryid, stateid]);
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -122,10 +150,7 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
 
 
 
-    // const [csearch, setCSearch] = useState([...con])
-    const [csearch, setCSearch] = useState([...countries])
-    const [ssearch, setSSearch] = useState([...states])
-    const [dsearch, setDSearch] = useState([...districts])
+
     const [cusearch, setcuSearch] = useState([...currencies])
     const [msSearch, setMsSearch] = useState([...dropdownMinimumSalary])
     const [maxSearch, setMaxSearch] = useState([...dropdownMaxSalary])
@@ -156,13 +181,16 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
 
     const searchTextMethod = (type, value) => {
         if (type == 'countries') {
-            setCSearch(countries.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
+            // setCSearch(countries.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
+            setCSearch(con.filter((e) => e.name.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'states') {
-            setSSearch(states.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
+            // setSSearch(states.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
+            setSSearch(sta.filter((e) => e.name.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'districts') {
-            setDSearch(districts.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
+            // setDSearch(districts.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
+            setDSearch(dis.filter((e) => e.name.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'Currency') {
             setcuSearch(currencies.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
@@ -436,7 +464,7 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                                                                                 }
 
                                                                             </span>
-                                                                            <span className={`${showOption == key ? 'text-[#00d8ff]' : ''} group-hover:text-[#00d8ff]`}>
+                                                                            <span className={`h-[15px] w-[15px]  ${showOption == key ? 'text-[#00d8ff]' : ''} group-hover:text-[#00d8ff]`}>
                                                                                 <DropDownSvg />
                                                                             </span>
                                                                         </button>
@@ -514,11 +542,12 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                                                                                                 return (
                                                                                                     <li key={key} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                         onClick={() => {
-                                                                                                            setcountry(ele)
+                                                                                                            setcountry(ele.name)
+                                                                                                            setCountryid(ele.id)
                                                                                                             setIsOpen(false)
                                                                                                             setShowOption('')
                                                                                                         }}
-                                                                                                    >{ele}</li>
+                                                                                                    >{ele.name}</li>
                                                                                                 )
                                                                                             })
                                                                                         }
@@ -572,11 +601,12 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                                                                                                 return (
                                                                                                     <li key={ind} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                         onClick={() => {
-                                                                                                            setstate(ele)
+                                                                                                            setStateid(ele.id)
+                                                                                                            setstate(ele.name)
                                                                                                             setIsOpen(false)
                                                                                                             setShowOption('')
                                                                                                         }}
-                                                                                                    >{ele}</li>
+                                                                                                    >{ele.name}</li>
                                                                                                 )
                                                                                             })
                                                                                         }
@@ -630,11 +660,11 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                                                                                                 return (
                                                                                                     <li key={ind} className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
                                                                                                         onClick={() => {
-                                                                                                            setdistrict(ele)
+                                                                                                            setdistrict(ele.name)
                                                                                                             setIsOpen(false)
                                                                                                             setShowOption('')
                                                                                                         }}
-                                                                                                    >{ele}</li>
+                                                                                                    >{ele.name}</li>
                                                                                                 )
                                                                                             })
                                                                                         }
