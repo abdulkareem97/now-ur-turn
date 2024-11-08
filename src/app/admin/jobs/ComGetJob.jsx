@@ -294,7 +294,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                                 onChange={(e) => searchTextMethod(e.target.value)}
                                 placeholder="Type here"
                             />
-                            <FaSearch className="absolute right-[24px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
+                            <FaSearch className="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                         </div>
                     </div>
 
