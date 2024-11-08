@@ -2,8 +2,8 @@
 const DropDownSvg = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="15"
+        height="15"
         viewBox="0 0 150 149.999998"
         preserveAspectRatio="xMidYMid meet"
         zoomAndPan="magnify"
