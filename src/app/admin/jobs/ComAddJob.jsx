@@ -2,13 +2,23 @@
 import React, { useEffect, useState } from 'react'
 import BackBlack from '../components/BackBlack'
 import DropDownSvg from '../components/DropDownSvg'
+// import { countries, currencies, districts, states } from './locationdata'
 import { countries, currencies, districts, states } from './locationdata'
 import { FaSearch } from 'react-icons/fa';
+import {
+    // GetCountries,
+    GetCountries,
+    GetState,
+    GetCity,
+    GetLanguages,
+    GetRegions,
+    GetPhonecodes //async functions
+  } from "react-country-state-city"
 
 let formData = {
     'Company Name': '',
     'About Company': '',
-    'Office Locations': ['', ''],
+    'Office Locations': [''],
     'Job Title': '',
     'Job Type': '',
     'Workplace Type': '',
@@ -22,7 +32,32 @@ let formData = {
     'Apply Now URL': ''
 }
 
-const ComAddJob = ({setRenderComponent,setHeading}) => {
+const ComAddJob = ({ setRenderComponent, setHeading }) => {
+
+    const [countryid, setCountryid] = useState(0);
+    const [stateid, setStateid] = useState(0);
+    const [cityid, setCityid] = useState(0);
+
+
+    const [con,setCon] = useState([])
+    const [sta,setSta]= useState([])
+    const [dis,setDis] = useState([])
+    useEffect(() => {
+       
+        // GetCountries().then((result) => {
+        GetCountries().then((result) => {
+          setCon(result);
+        });
+        GetState(countryid).then((result) => {
+            setSta(result);
+          });
+          GetCity(countryid, stateid).then((result) => {
+            setDis(result);
+          });
+    
+      }, []);
+
+
     const [isOpen, setIsOpen] = useState(false);
     const [image, setImage] = useState(null);
     const [data, setData] = useState(formData)
@@ -39,7 +74,7 @@ const ComAddJob = ({setRenderComponent,setHeading}) => {
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
         setHeading('Create New Job Post')
-      }, []);
+    }, []);
 
     const [jobTypeCom, setJobTypeCom] = useState('Select type');
     const [workspaceTypeCom, setworkspaceTypeCom] = useState('Select type');
@@ -73,9 +108,9 @@ const ComAddJob = ({setRenderComponent,setHeading}) => {
         '3+',
     ]
     const start = 100000;
-const end = 10000000;
-const step = 50000;
-    let dropdownMinimumSalary =Array.from(
+    const end = 10000000;
+    const step = 50000;
+    let dropdownMinimumSalary = Array.from(
         { length: Math.floor((end - start) / step) + 1 },
         (_, i) => (start + i * step).toString()
     );
@@ -83,10 +118,11 @@ const step = 50000;
         { length: Math.floor((end - start) / step) + 1 },
         (_, i) => (start + i * step).toString()
     );
-    
 
 
 
+
+    // const [csearch, setCSearch] = useState([...con])
     const [csearch, setCSearch] = useState([...countries])
     const [ssearch, setSSearch] = useState([...states])
     const [dsearch, setDSearch] = useState([...districts])
@@ -140,22 +176,121 @@ const step = 50000;
 
     }
 
-    const addMore = ()=>{
-        if(data['Office Locations'].some((ele)=>ele=='')){
+    const addMore = () => {
+        if (data['Office Locations'].some((ele) => ele == '')) {
             console.log('some')
             return
-            
+
         }
-    
-        setData((ele)=>{
+
+        setData((ele) => {
             console.log(ele)
             return {
                 ...ele,
-                'Office Locations':[...ele['Office Locations'],'']
+                'Office Locations': [...ele['Office Locations'], '']
 
             }
         })
+        setLocationFilled(false)
     }
+    const [locationFilled, setLocationFilled] = useState(false)
+    const [postFilled,setPostFilled] = useState(false)
+
+    const handleOfficeLocation = (e, ind) => {
+        const newValue = e.target.value;
+        // setText(newValue);
+        // console.log("Text changed:", newValue,ind);
+        let d = [...data['Office Locations']]
+        d[ind] = newValue
+        // console.log(d)
+        if (d.some((ele) => ele == '')) {
+
+
+        } else {
+            setLocationFilled(true)
+        }
+        setData((ele) => {
+
+            return {
+                ...ele,
+                'Office Locations': [...d]
+
+            }
+        })
+
+    };
+
+    const handleInputChange = (e, key) => {
+        let value = e.target.value
+
+        setData((ele) => {
+
+            return {
+                ...ele,
+                [key]: value
+
+            }
+        })
+
+    }
+
+    useEffect(() => {
+        setData((e) => {
+
+
+            return {
+                ...e,
+                'Job Type': jobTypeCom,
+                'Workplace Type': workspaceTypeCom,
+                'Job Location': { 'country': country, 'state': state, 'district': district },
+                'Min Work Experience': workExperienceCom,
+                'Currency': currency,
+                'Minimum Salary': minimumSalary,
+                'Maximum Salary': maximumSalary,
+            }
+        })
+    }, [jobTypeCom, workspaceTypeCom, workExperienceCom, minimumSalary, maximumSalary, country, state, district, currency])
+
+
+    useEffect(() => {
+        console.log(data,hasEmptyValue(data))
+        if(hasEmptyValue(data)){
+            setPostFilled(false)
+        }
+        else{
+            setPostFilled(true)
+        }
+        
+
+    }, [data])
+
+    function hasEmptyValue(d) {
+        for (const key in d) {
+            const value = d[key];
+            if(key)
+
+            // Check if value is an empty string
+            if (value === '' || (typeof value=='string' && value.toLowerCase().includes('select'))) {
+                return true;
+            }
+
+            // Check if value is an array and contains an empty string
+            if (Array.isArray(value) && value.some(item => item === '')) {
+                return true;
+            }
+
+            // Check if value is an object and has any empty values recursively
+            if (typeof value === 'object' && !Array.isArray(value)) {
+                if (hasEmptyValue(value)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+
 
 
 
@@ -177,9 +312,9 @@ const step = 50000;
                     
                     
                     '
-                    onClick={()=>setRenderComponent(1)}
-                    
-                    >
+                                onClick={() => setRenderComponent(1)}
+
+                            >
                                 <span className=''>
                                     <BackBlack />
                                 </span>
@@ -234,8 +369,8 @@ const step = 50000;
                                                         key == 'Office Locations' ?
                                                             <>
                                                                 {
-                                                                    value.map((ele) => {
-                                                                        console.log('testing',ele)
+                                                                    value.map((ele, ind) => {
+                                                                        {/* console.log('testing',ele) */ }
                                                                         return (
                                                                             <>
 
@@ -246,6 +381,7 @@ const step = 50000;
                                                                                         e.target.style.height = "auto";
                                                                                         e.target.style.height = `${e.target.scrollHeight}px`;
                                                                                     }}
+                                                                                    onChange={(e) => handleOfficeLocation(e, ind)}
                                                                                     placeholder="Type here"
                                                                                 />
 
@@ -255,14 +391,14 @@ const step = 50000;
                                                                     })}
                                                                 <div className=' text-white  text-[14px] w-full'>
                                                                     <div>
-                                                                        <button className='bg-[#1C202C] flex bg-[#2a2f41] active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-full
-    border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
+                                                                        <button className={`bg-[#1C202C] flex bg-[#2a2f41]   justify-center items-center text-xl rounded-[8px] h-[40px] w-full
+    border-[2px] border-[#1C202C]  ${locationFilled ? 'hover:border-[#00d8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black ' : 'bg-[#6290c0]'}
 
     
     
-    '
-    onClick={addMore}
-    >
+    `}
+                                                                            onClick={addMore}
+                                                                        >
                                                                             <span className='font-bold'>
                                                                                 Add More
                                                                             </span>
@@ -585,6 +721,7 @@ const step = 50000;
                                                                                 e.target.style.height = "auto";
                                                                                 e.target.style.height = `${e.target.scrollHeight}px`;
                                                                             }}
+                                                                            onChange={(e) => handleInputChange(e, key)}
                                                                             placeholder="Type here"
                                                                         />}
 
@@ -609,7 +746,7 @@ const step = 50000;
                                                         })
                                                     } */}
                                                 </div>
-                                            </div >
+                                            </div>
                                         </>
                                     )
                                 })
@@ -619,17 +756,17 @@ const step = 50000;
 
 
 
-                        </div >
+                        </div>
                     </div>
 
 
                     {/* buttons */}
                     <div className='mt-[12px] space-y-[12px]'>
 
-                        < div className=' text-white  text-[14px] w-full'>
+                        <div className=' text-white  text-[14px] w-full'>
                             <div>
-                                <button className=' bg-[#6290c0] hover:bg-[#1C202C] flex  active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-full border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]  ' 
-                                  onClick={()=>setRenderComponent(1)}>
+                                <button className={` bg-[#1C202C]  justify-center items-center text-xl rounded-[8px] h-[40px] w-full border-[2px] border-[#1C202C]  ${postFilled ? ' hover:bg-[#1C202C] flex  active:bg-[#00d8ff] active:text-black hover:border-[#00d8ff] hover:text-[#00d8ff]' : 'bg-[#6290c0]' } `}
+                                    onClick={() => setRenderComponent(1)}>
                                     <span className='font-bold'>
                                         Post
                                     </span>
@@ -638,22 +775,22 @@ const step = 50000;
                             </div>
 
                         </div>
-                        < div className=' text-white  text-[14px] w-full'>
+                        <div className=' text-white  text-[14px] w-full'>
                             <div>
                                 <button className='  bg-[#1C202C] flex  active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-full border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]  '>
                                     <span className='font-bold'>
-                                    Preview
+                                        Preview
                                     </span>
                                 </button>
 
                             </div>
 
                         </div>
-                        < div className=' text-white  text-[14px] w-full'>
+                        <div className=' text-white  text-[14px] w-full'>
                             <div>
                                 <button className='  bg-[#1C202C] flex  active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-full border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]  '>
                                     <span className='font-bold'>
-                                    Cancel
+                                        Cancel
                                     </span>
                                 </button>
 
