@@ -17,6 +17,266 @@ const alljobs = [
         jobStatus: 'Active'
     },
     {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
+        jobId: '#J0000000152',
+        jobType: 'Full Time',
+        workplaceType: 'On-site',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: '21 Jan 2023',
+        deletedDate: '-',
+        rejectedDate: '-',
+        jobStatus: 'Active'
+    },
+    {
         jobId: '#J0000000153',
         jobType: 'Full Time',
         workplaceType: 'On-site',
@@ -27,9 +287,10 @@ const alljobs = [
         jobStatus: 'Suspended'
     }
 ]
-const ComJobTable = ({setRenderComponent}) => {
+const ComJobTable = ({setRenderComponent,setHeading}) => {
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
+        setHeading('Jobs')
       }, []);
     const [isOpen, setIsOpen] = useState(false);
     const [com, setCom] = useState(1);
@@ -65,9 +326,12 @@ const ComJobTable = ({setRenderComponent}) => {
                     
                     
                     '
-                    onClick={()=>setRenderComponent(2)}
+                    onClick={()=>{
+                        setRenderComponent(2);
+                    
+                        }}
                     >
-                            <span className='cursor-pointer'>
+                            <span className='cursor-pointer font-semibold'>
                                 Create New Job Post
                             </span>
                         </div>
@@ -139,35 +403,35 @@ const JobTable = ({setRenderComponent}) => {
             <table className="min-w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
                 <thead>
                     <tr className="h-[40px]">
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">S. No</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Job ID</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Job Type</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Workplace Type</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Created Date</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Approval Date</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Deleted Date</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Rejected Date</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">S. No</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Job ID</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Job Type</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Workplace Type</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Created Date</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Approval Date</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Deleted Date</th>
+                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Rejected Date</th>
 
-                        <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41]">Job Status</th>
+                        <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Job Status</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     {alljobs.map((ele, i) => {
-                        let color = i % 2 === 0 ? 'bg-[#020617]' : 'bg-[#1C202C]';
+                        let color = i % 2 === 0 ? 'bg-[#161923]' : 'bg-[#1C202C]';
                         return (
                             <tr key={i} className={`${color} h-[40px]`}>
-                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41]">{i}</td>
-                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer"
+                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41] border-r-[#ffffff]">{i}</td>
+                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer border-r-[#ffffff]"
                                 onClick={()=>setRenderComponent(3)}
                                 
                                 >{ele.jobId}</td>
-                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41]">{ele.jobType}</td>
-                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41]">{ele.workplaceType}</td>
-                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41]">{ele.createdDate}</td>
-                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41]">{ele.ApprovalDate}</td>
-                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41]">{ele.deletedDate}</td>
-                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41]">{ele.rejectedDate}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.jobType}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.workplaceType}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.createdDate}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.ApprovalDate}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.deletedDate}</td>
+                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.rejectedDate}</td>
                                 <td className={`px-[12px] text-center border-b border-[#2A2F41]  ${ele.jobStatus == 'Active' ? 'text-[#00e262]' : 'text-[#ff5757]'}`}>{ele.jobStatus}</td>
                             </tr>
                         );

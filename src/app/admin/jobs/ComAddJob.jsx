@@ -22,7 +22,7 @@ let formData = {
     'Apply Now URL': ''
 }
 
-const ComAddJob = ({setRenderComponent}) => {
+const ComAddJob = ({setRenderComponent,setHeading}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [image, setImage] = useState(null);
     const [data, setData] = useState(formData)
@@ -38,14 +38,15 @@ const ComAddJob = ({setRenderComponent}) => {
 
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
+        setHeading('Create New Job Post')
       }, []);
 
-    const [jobTypeCom, setJobTypeCom] = useState('');
-    const [workspaceTypeCom, setworkspaceTypeCom] = useState('');
-    const [workExperienceCom, setWorkExperienceCom] = useState('');
-    const [minimumSalary, setMinimumSalary] = useState('');
-    const [maximumSalary, setMaximumSalary] = useState('');
-    const [currency, setCurrency] = useState('');
+    const [jobTypeCom, setJobTypeCom] = useState('Select type');
+    const [workspaceTypeCom, setworkspaceTypeCom] = useState('Select type');
+    const [workExperienceCom, setWorkExperienceCom] = useState('Select years');
+    const [minimumSalary, setMinimumSalary] = useState('Select amount');
+    const [maximumSalary, setMaximumSalary] = useState('Select amount');
+    const [currency, setCurrency] = useState('Select currency');
     // const [minimumSalary, setMinimumSalary] = useState('');
     const [country, setcountry] = useState('Select Country');
     const [state, setstate] = useState('Select State');
@@ -71,33 +72,27 @@ const ComAddJob = ({setRenderComponent}) => {
         '2+',
         '3+',
     ]
-    let dropdownMinimumSalary = [
-        '1lakh',
-        '2lakh',
-        '3lakh',
-        '4lakh',
-        '5lakh',
-        '6lakh',
-        '7lakh',
-    ]
-    let dropdownMaxSalary = [
-        '1lakh',
-        '2lakh',
-        '3lakh',
-        '4lakh',
-        '5lakh',
-        '6lakh',
-        '7lakh',
-    ]
+    const start = 100000;
+const end = 10000000;
+const step = 50000;
+    let dropdownMinimumSalary =Array.from(
+        { length: Math.floor((end - start) / step) + 1 },
+        (_, i) => (start + i * step).toString()
+    );
+    let dropdownMaxSalary = Array.from(
+        { length: Math.floor((end - start) / step) + 1 },
+        (_, i) => (start + i * step).toString()
+    );
+    
 
 
 
-    const [csearch, setCSearch] = useState([...countries].slice(0, 5))
-    const [ssearch, setSSearch] = useState([...states].slice(0, 5))
-    const [dsearch, setDSearch] = useState([...districts].slice(0, 5))
-    const [cusearch, setcuSearch] = useState([...currencies].slice(0, 5))
-    const [msSearch, setMsSearch] = useState([...dropdownMinimumSalary].slice(0, 5))
-    const [maxSearch, setMaxSearch] = useState([...dropdownMaxSalary].slice(0, 5))
+    const [csearch, setCSearch] = useState([...countries])
+    const [ssearch, setSSearch] = useState([...states])
+    const [dsearch, setDSearch] = useState([...districts])
+    const [cusearch, setcuSearch] = useState([...currencies])
+    const [msSearch, setMsSearch] = useState([...dropdownMinimumSalary])
+    const [maxSearch, setMaxSearch] = useState([...dropdownMaxSalary])
     const [searchText, setSearchText] = useState('')
 
     let getOptionValue = {
@@ -125,27 +120,33 @@ const ComAddJob = ({setRenderComponent}) => {
 
     const searchTextMethod = (type, value) => {
         if (type == 'countries') {
-            setCSearch(countries.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())).filter((ele, ind) => ind <= 5))
+            setCSearch(countries.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'states') {
-            setSSearch(states.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())).filter((ele, ind) => ind <= 5))
+            setSSearch(states.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'districts') {
-            setDSearch(districts.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())).filter((ele, ind) => ind <= 5))
+            setDSearch(districts.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'Currency') {
-            setcuSearch(currencies.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())).filter((ele, ind) => ind <= 5))
+            setcuSearch(currencies.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'Minimum Salary') {
-            setMsSearch(dropdownMinimumSalary.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())).filter((ele, ind) => ind <= 5))
+            setMsSearch(dropdownMinimumSalary.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
         }
         else if (type == 'Maximum Salary') {
-            setMaxSearch(dropdownMaxSalary.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())).filter((ele, ind) => ind <= 5))
+            setMaxSearch(dropdownMaxSalary.filter((e) => e.toLowerCase().startsWith(value.toLowerCase())))
         }
 
     }
 
     const addMore = ()=>{
+        if(data['Office Locations'].some((ele)=>ele=='')){
+            console.log('some')
+            return
+            
+        }
+    
         setData((ele)=>{
             console.log(ele)
             return {
@@ -197,7 +198,7 @@ const ComAddJob = ({setRenderComponent}) => {
 
                             {/* image input */}
                             <div className="flex flex-col items-center">
-                                <label className="cursor-pointer">
+                                <label className="cursor-pointer hover:text-[#00d8ff]  text-white">
                                     <input
                                         type="file"
                                         accept="image/*"
@@ -211,7 +212,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                             className="w-[144px] rounder-container h-[144px] object-cover rounded"
                                         />
                                     ) : (
-                                        <div className="w-[144px] rounder-container h-[144px] input-container flex items-center justify-center text-white text-center underline">
+                                        <div className="w-[144px] rounder-container h-[144px] input-container flex items-center justify-center text-center underline">
                                             Upload Logo
                                         </div>
                                     )}
@@ -252,7 +253,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                             </>
                                                                         )
                                                                     })}
-                                                                < div className=' text-white  text-[14px] w-full'>
+                                                                <div className=' text-white  text-[14px] w-full'>
                                                                     <div>
                                                                         <button className='bg-[#1C202C] flex bg-[#2a2f41] active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-full
     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
@@ -333,7 +334,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                 (key == 'Job Location') ? <>
 
                                                                     <div className='w-full'>
-                                                                        <div className={`relative inline-block text-left ${showOption == key ? 'z-20' : ''} w-full`}>
+                                                                        <div className={`relative inline-block text-left ${showOption == 'countries' ? 'z-20' : ''} w-full`}>
                                                                             {/* Dropdown Button */}
                                                                             <button
                                                                                 onClick={() => {
@@ -370,7 +371,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                                         <FaSearch className="absolute right-[24px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                                                                                     </div>
 
-                                                                                    <ul className="py-1">
+                                                                                    <ul className="py-1 overflow-x-scroll h-[175px]">
                                                                                         {
 
                                                                                             csearch.map((ele, ind) => {
@@ -392,7 +393,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                         </div>
                                                                     </div>
                                                                     <div className='w-full'>
-                                                                        <div className={`relative inline-block text-left ${showOption == key ? 'z-20' : ''} w-full`}>
+                                                                        <div className={`relative inline-block text-left ${showOption == 'states' ? 'z-20' : ''} w-full`}>
                                                                             {/* Dropdown Button */}
                                                                             <button
                                                                                 onClick={() => {
@@ -428,7 +429,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                                         />
                                                                                         <FaSearch className="absolute right-[24px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                                                                                     </div>
-                                                                                    <ul className="py-1">
+                                                                                    <ul className="py-1 overflow-x-scroll h-[175px]">
                                                                                         {
 
                                                                                             ssearch.map((ele, ind) => {
@@ -450,7 +451,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                         </div>
                                                                     </div>
                                                                     <div className='w-full'>
-                                                                        <div className={`relative inline-block text-left ${showOption == key ? 'z-20' : ''} w-full`}>
+                                                                        <div className={`relative inline-block text-left ${showOption == 'districts' ? 'z-20' : ''} w-full`}>
                                                                             {/* Dropdown Button */}
                                                                             <button
                                                                                 onClick={() => {
@@ -486,7 +487,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                                         />
                                                                                         <FaSearch className="absolute right-[24px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                                                                                     </div>
-                                                                                    <ul className="py-1">
+                                                                                    <ul className="py-1 overflow-x-scroll h-[175px]">
                                                                                         {
 
                                                                                             dsearch.map((ele, ind) => {
@@ -545,7 +546,7 @@ const ComAddJob = ({setRenderComponent}) => {
                                                                                             <FaSearch className="absolute right-[24px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                                                                                         </div>
 
-                                                                                        <ul className="py-1">
+                                                                                        <ul className="py-1 overflow-x-scroll h-[175px]">
                                                                                             {
 
                                                                                                 getOptionValue[key + ' option'].map((ele, ind) => {

@@ -31,23 +31,101 @@ const JobData = {
 
 
     },
-    applicants: [{
+    applicants: [
+        {
         name: 'John Cartel',
         id: '#A00000369',
         appliedAt: '21 Jun 2024',
         status: 'WaitList',
         photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    }],
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+        {
+        name: 'John Cartel',
+        id: '#A00000369',
+        appliedAt: '21 Jun 2024',
+        status: 'WaitList',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    },
+
+
+],
 
 };
 
 
-const ComGetJob = ({ setRenderComponent }) => {
+const ComGetJob = ({ setRenderComponent,setHeading }) => {
 
     const [applicants, setApplicants] = useState([...JobData.applicants])
     const [data, setData] = useState({ ...JobData })
     // const [searchText,setSearchText] = useState('')
     // console.log(a)
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scrolls to the top of the page
+        setHeading('#A00000369')
+      }, []);
 
 
 
@@ -369,14 +447,16 @@ const ApplicantTable = ({ applicants, setRenderComponent }) => {
                             return (
                                 <>
 
-                                    <div className='flex p-[12px] space-x-[12px] w-full bg-[#2a2f41] rounded-[8px] hover:border hover:border-[#00d8ff]'
+                                    <div className='flex p-[12px] space-x-[12px] w-full bg-[#2a2f41] rounded-[8px] hover:border-[2px] hover:border-[#6290c0] active:border-[#00d8ff] active:border-[2px]
+
+]'
                                         onClick={() => setRenderComponent(4)}
                                     >
-                                        <div className="min-w-[88px] h-[88px] rounded-full overflow-hidden">
+                                        <div className="min-w-[100px] h-[100px] rounded-full overflow-hidden">
                                             <img src={ele.photoUrl}
                                                 // width={'60px'}
                                                 // height={'30px'}
-                                                className=' object-cover w-[88px] h-[88px] '
+                                                className=' object-cover w-[100px] h-[100px] '
                                             // style={{borderRight:'100%'}}
                                             />
 
@@ -385,10 +465,12 @@ const ApplicantTable = ({ applicants, setRenderComponent }) => {
                                             {
                                                 Object.entries(d).map(([key, value]) => {
                                                     // const status = ele.value=='Active' 
+                                                    // const name = ele.key=='name'
+                                                    // console.log('name',ele.key)
 
                                                     return (
                                                         <>
-                                                            <span className="">{value}</span>
+                                                            <span className={`${'name'==key ? 'font-semibold pb-[12px]' : ''}`}>{value}</span>
                                                         </>
                                                     )
                                                 })

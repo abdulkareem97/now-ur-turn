@@ -81,12 +81,7 @@ export default function Layout({ children }) {
                         </aside>
                     </div>
                     <main className="w-full py-[40px] bg-[#0D0D19]">
-                        <h1 className="text-[#FFE683] text-[16px] text-center font-semibold" style={{ color: "#ffe683" }}>
-                            #A00000369
-                        </h1>
-                        <div className="content px-[40px] mt-[60px] ">
-                            {children}
-                        </div>
+                        {children}
                     </main>
                 </section>
 
