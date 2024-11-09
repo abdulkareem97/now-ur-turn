@@ -10,6 +10,9 @@ const Page = () => {
   const [heading,setHeading] = useState('Jobs')
   return (
     <>
+     <main className={`w-full py-[40px] bg-[#0D0D19] ${renderComponent==2 ? 'h-[calc(100vh-50px)] overflow-y-auto' : ''}`}>
+                      
+                   
       <h1 className="text-[#FFE683] text-[16px] text-center font-semibold" style={{ color: "#ffe683" }}>
         {heading}
       </h1>
@@ -18,6 +21,7 @@ const Page = () => {
           renderComponent == 1 ? <ComJobTable setRenderComponent={setRenderComponent} setHeading={setHeading} /> : renderComponent == 2 ? <ComAddJob setRenderComponent={setRenderComponent} setHeading={setHeading} /> : renderComponent == 3 ? <ComGetJob setRenderComponent={setRenderComponent}setHeading={setHeading} /> : renderComponent == 4 ? <ComUserProfile setRenderComponent={setRenderComponent}setHeading={setHeading} /> : <></>
         }
       </div>
+      </main>
 
 
     </>

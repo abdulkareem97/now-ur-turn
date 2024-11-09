@@ -80,9 +80,7 @@ export default function Layout({ children }) {
                             ))}
                         </aside>
                     </div>
-                    <main className="w-full py-[40px] bg-[#0D0D19]">
-                        {children}
-                    </main>
+                    {children}
                 </section>
 
                 </> 

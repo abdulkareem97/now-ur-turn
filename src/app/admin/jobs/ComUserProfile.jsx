@@ -373,14 +373,14 @@ const ChatConversion = () => {
 const ContactTable = () => {
     return (
         <div className="overflow-auto">
-        <table className="table-fixed min-w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
+        <table className="table-fixed w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
             <thead>
                 <tr className="h-[40px]">
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-">Email</th>
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-">Contact</th>
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-">LinkedIn</th>
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-">GitHub</th>
-                    <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-">Website</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] ">Email</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] ">Contact</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] ">LinkedIn</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] ">GitHub</th>
+                    <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] ">Website</th>
                 </tr>
             </thead>
             <tbody>
@@ -388,10 +388,10 @@ const ContactTable = () => {
                     let color = i % 2 === 0 ?  'bg-[#161923]' : 'bg-[#1C202C]';
                     return (
                         <tr key={i} className={`${color} h-[40px]`}>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] w-"></td>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] w-"></td>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] w-"></td>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] w-"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] "></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] "></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] "></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff] "></td>
                             <td className="px-[12px]  border-b border-[#2A2F41]"></td>
                         </tr>
                     );
