@@ -65,7 +65,7 @@ export default function Layout({ children }) {
                         Now<span className="text-pink-500 text-[20px]">Ur</span>Turn
                     </h1>
                 </nav>
-                <section className="flex pt-[50px]  w-full">
+                <section className="flex pt-[50px]  w-full h-[calc(100vh)]">
                     <div className='w-[224px]'>
                         <aside id="ps" className="bg-[#1C202C]  text-[14px] px-[12px] h-full py-[40px] overflow-y-auto space-y-[8px]">
                             {primarySidebarLinks.map((link) => (

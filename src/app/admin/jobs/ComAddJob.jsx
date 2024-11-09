@@ -340,7 +340,7 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                 <div className="fixed inset-0 bg-black bg-opacity-60 z-10" onClick={() => { setIsOpen(false); setShowOption('') }}></div>
             )}
 
-            <div className='flex justify-center  overflow-auto'>
+            <div className='flex justify-center  overflow-auto h-[73vh]'>
                 <div className="relative w-[50%]   ">
                     <div className='flex justify-between text-white  text-[14px]'>
                         <div>
@@ -846,7 +846,7 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         </>
     )
 }
