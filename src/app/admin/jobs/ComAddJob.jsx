@@ -116,24 +116,34 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
     const [district, setdistrict] = useState('Select District');
 
     let dropDownOptionJobType = [
-        'All Jobs',
-        'Full Time Jobs',
-        'Part Time Jobs',
-        'Internships',
-        'Apprenticeships',
-        'Contracts',
-        'others'
+        'Full Time',
+        'Part Time',
+        'Contract',
+        'Temporary',
+        'Apprenticeship',
+        'Internship',
+        'Other'
     ]
     let dropDownOptionJWorkspaceType = [
-        'on site',
-        'of site',
-        'hybrid',
-        'remote'
+        'On-site',
+        'Off-site',
+        'Remote',
+        'Hybrid'
     ]
     let dropdownWorkExperience = [
-        '1+',
-        '2+',
-        '3+',
+       'No experiance needed to apply',
+       '1+ years',
+       '2+ years',
+       '3+ years',
+       '4+ years',
+       '5+ years',
+       '6+ years',
+       '7+ years',
+       '8+ years',
+       '9+ years',
+       '10+ years',
+       '11+ years',
+       '12+ years',
     ]
     const start = 100000;
     const end = 10000000;
@@ -796,7 +806,14 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                         <div className=' text-white  text-[14px] w-full'>
                             <div>
                                 <button className={` bg-[#1C202C]  justify-center items-center text-xl rounded-[8px] h-[40px] w-full border-[2px] border-[#1C202C]  ${postFilled ? ' hover:bg-[#1C202C] flex  active:bg-[#00d8ff] active:text-black hover:border-[#00d8ff] hover:text-[#00d8ff]' : 'bg-[#6290c0]' } `}
-                                    onClick={() => setRenderComponent(1)}>
+                                    onClick={() => {
+                                        if(postFilled){
+
+                                        setRenderComponent(1);
+                                        }
+                                        
+                                        
+                                        }}>
                                     <span className='font-bold'>
                                         Post
                                     </span>

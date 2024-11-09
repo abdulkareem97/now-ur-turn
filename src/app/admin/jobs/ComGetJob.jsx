@@ -194,7 +194,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                     </div>
                     <div className="fixed inset-0  z-[80] flex justify-center items-center">
                         <div className="bg-[#1C202C] p-[12px] space-y-[12px] text-white rounded-[8px]">
-                            <div className="text-center">Are you sure want to revoke the current status of this Job?</div>
+                            <div className="text-center font-semibold">Are you sure want to revoke the current status of this Job?</div>
                             <div className="flex space-x-[12px] mt-[40px]">
                                 <div className='bg-[#2a2f41] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#2a2f41] hover:border-[#00d8ff] hover:text-[#00d8ff]
@@ -202,7 +202,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                                 // onClick={() => setRenderComponent(1)}
                                 onClick={() => setIsAlert(false)}
                                 >
-                                    <span className=''>
+                                    <span className='font-semibold'>
                                         No
                                     </span>
                                 </div>
@@ -216,7 +216,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                                 
                                 }}
                                 >
-                                    <span className=''>
+                                    <span className='font-semibold'>
                                         Yes
                                     </span>
                                 </div>
@@ -249,7 +249,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                     '
                                 onClick={() => setApprove('Active')}
                             >
-                                <span className=''>
+                                <span className='font-semibold'>
                                     Approve
                                 </span>
                             </div>
@@ -261,7 +261,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                     '
                                 onClick={() => setApprove('Rejected')}
                             >
-                                <span className=''>
+                                <span className='font-semibold'>
                                     Reject
                                 </span>
                             </div>
@@ -278,7 +278,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                                 onClick={() => setIsAlert(true)}
                                 
                             >
-                                <span className=''>
+                                <span className='font-semibold'>
                                     Revoke Status
                                 </span>
                             </div>

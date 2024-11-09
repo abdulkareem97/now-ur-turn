@@ -373,25 +373,25 @@ const ChatConversion = () => {
 const ContactTable = () => {
     return (
         <div className="overflow-auto">
-        <table className="min-w-full bg-[#0F172A] rounded-lg border border-[#2A2F41]">
+        <table className="min-w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
             <thead>
                 <tr className="h-[40px]">
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Email</th>
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">Contact</th>
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">LinkedIn</th>
-                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41]">GitHub</th>
-                    <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41]">Website</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Email</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Contact</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">LinkedIn</th>
+                    <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">GitHub</th>
+                    <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Website</th>
                 </tr>
             </thead>
             <tbody>
                 {[...Array(24)].map((_, i) => {
-                    let color = i % 2 === 0 ? 'bg-[#020617]' : 'bg-[#0F172A]';
+                    let color = i % 2 === 0 ?  'bg-[#161923]' : 'bg-[#1C202C]';
                     return (
                         <tr key={i} className={`${color} h-[40px]`}>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
-                            <td className="px-[12px]  border-r border-b border-[#2A2F41]"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff]"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff]"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff]"></td>
+                            <td className="px-[12px]  border-r border-b border-[#2A2F41] border-r-[#ffffff]"></td>
                             <td className="px-[12px]  border-b border-[#2A2F41]"></td>
                         </tr>
                     );
