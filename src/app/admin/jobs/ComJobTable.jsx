@@ -396,23 +396,21 @@ const ComJobTable = ({setRenderComponent,setHeading}) => {
         </>
     )
 }
-
-const JobTable = ({setRenderComponent}) => {
+const JobTable = ({ setRenderComponent }) => {
     return (
         <div className="overflow-auto">
-            <table className="min-w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
+            <table className="table-fixed w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
                 <thead>
                     <tr className="h-[40px]">
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">S. No</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Job ID</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Job Type</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Workplace Type</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Created Date</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Approval Date</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Deleted Date</th>
-                        <th className="px-[12px]  text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Rejected Date</th>
-
-                        <th className="px-[12px]  text-[#FFE683] border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Job Status</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">S. No</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] min-w-[100px]">Job ID</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Job Type</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Workplace Type</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Created Date</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Approval Date</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Deleted Date</th>
+                        <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Rejected Date</th>
+                        <th className="px-[12px] text-[#FFE683] border-b-[2px] border-[#2A2F41] border-b-[#ffffff]">Job Status</th>
                     </tr>
                 </thead>
 
@@ -421,26 +419,31 @@ const JobTable = ({setRenderComponent}) => {
                         let color = i % 2 === 0 ? 'bg-[#161923]' : 'bg-[#1C202C]';
                         return (
                             <tr key={i} className={`${color} h-[40px]`}>
-                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41] border-r-[#ffffff]">{i}</td>
-                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer border-r-[#ffffff]"
-                                onClick={()=>setRenderComponent(3)}
-                                
-                                >{ele.jobId}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{i}</td>
+                                <td
+                                    className="px-[12px] text-center border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer border-r-[#ffffff]"
+                                    onClick={() => setRenderComponent(3)}
+                                >
+                                    {ele.jobId}
+                                </td>
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.jobType}</td>
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.workplaceType}</td>
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.createdDate}</td>
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.ApprovalDate}</td>
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.deletedDate}</td>
-                                <td className="px-[12px] text-center  border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.rejectedDate}</td>
-                                <td className={`px-[12px] text-center border-b border-[#2A2F41]  ${ele.jobStatus == 'Active' ? 'text-[#00e262]' : 'text-[#ff5757]'}`}>{ele.jobStatus}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.rejectedDate}</td>
+                                <td className={`px-[12px] text-center border-b border-[#2A2F41] ${ele.jobStatus === 'Active' ? 'text-[#00e262]' : 'text-[#ff5757]'}`}>
+                                    {ele.jobStatus}
+                                </td>
                             </tr>
                         );
                     })}
                 </tbody>
             </table>
         </div>
-
     );
-}
+};
+
+
 
 export default ComJobTable
