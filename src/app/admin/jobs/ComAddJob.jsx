@@ -32,7 +32,7 @@ let formData = {
     'Apply Now URL': ''
 }
 
-const ComAddJob = ({ setRenderComponent, setHeading }) => {
+const ComAddJob = ({ setRenderComponent,src, setHeading }) => {
 
     const [countryid, setCountryid] = useState(0);
     const [stateid, setStateid] = useState(0);
@@ -350,7 +350,7 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                     
                     
                     '
-                                onClick={() => setRenderComponent(1)}
+                                onClick={() => setRenderComponent(src)}
 
                             >
                                 <span className=''>
@@ -809,7 +809,7 @@ const ComAddJob = ({ setRenderComponent, setHeading }) => {
                                     onClick={() => {
                                         if(postFilled){
 
-                                        setRenderComponent(1);
+                                        setRenderComponent(src);
                                         }
                                         
                                         

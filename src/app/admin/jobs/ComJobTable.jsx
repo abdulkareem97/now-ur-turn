@@ -287,7 +287,7 @@ const alljobs = [
         jobStatus: 'Suspended'
     }
 ]
-const ComJobTable = ({setRenderComponent,setHeading}) => {
+const ComJobTable = ({setRenderComponent,src,src1,setHeading}) => {
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
         setHeading('Jobs')
@@ -327,7 +327,7 @@ const ComJobTable = ({setRenderComponent,setHeading}) => {
                     
                     '
                     onClick={()=>{
-                        setRenderComponent(2);
+                        setRenderComponent(src);
                     
                         }}
                     >
@@ -386,7 +386,7 @@ const ComJobTable = ({setRenderComponent,setHeading}) => {
             </div>
             <div className='mt-[12px] flex space-x-[40px] text-white text-[14px] h-[73vh]'>
                 <div className="bg-[#1C202C] border-2 overflow-auto border-[#FFFFFF] rounded-[16px] w-full">
-                    <JobTable setRenderComponent={setRenderComponent}/>
+                    <JobTable setRenderComponent={setRenderComponent} src1={src1}/>
                 </div>
 
             </div>
@@ -396,7 +396,7 @@ const ComJobTable = ({setRenderComponent,setHeading}) => {
         </>
     )
 }
-const JobTable = ({ setRenderComponent }) => {
+const JobTable = ({ setRenderComponent,src1 }) => {
     return (
         <div className="overflow-auto">
             <table className="table-fixed w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
@@ -422,7 +422,7 @@ const JobTable = ({ setRenderComponent }) => {
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{i}</td>
                                 <td
                                     className="px-[12px] text-center border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer border-r-[#ffffff]"
-                                    onClick={() => setRenderComponent(3)}
+                                    onClick={() => setRenderComponent(src1)}
                                 >
                                     {ele.jobId}
                                 </td>

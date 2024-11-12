@@ -5,11 +5,18 @@ import Image from 'next/image'
 import BackBlack from '../components/BackBlack';
 import DropDownSvg from '../components/DropDownSvg';
 import { FaSearch } from 'react-icons/fa';
+import { AppliedJob, ChatConversion, ContactTable } from './ComUserProfile';
 const JobData = {
     status: {
         jobStatus: 'Pending',
         totalResume: '09 Jan 2024',
-        TotalHire: '#A00000369'
+        TotalHire: '#A00000369',
+      
+    },
+    statusRecruiter:{
+        recurStatus: 'Pending',
+        totalJobPost: '0',
+        totalResume: '0'
     },
     photoUrl: 'https://www.investmentmonitor.ai/wp-content/uploads/sites/7/2021/12/microsoft-headquarters-fdi.jpg',
     profile: {
@@ -31,92 +38,105 @@ const JobData = {
 
 
     },
+    profileRecru: {
+        companyName: "Microsoft",
+        recruiterId: 'Manual Jobs',
+        createdDate: '21 Jan 2023',
+        ApprovalDate: "21 Jan 2023",
+        deletedDate: "-",
+        rejectedDate: "-",
+        VerificationDocument: 'Aadhar.pdf',
+        AboutCompany: 'Google is a multinational technology company that specializes in internet-related services and products. It is best known for its search engine, which allows users to search for information on the internet. Google also offers a variety of other products and services such as email, cloud storage, maps, advertising, and more. The company was founded in 1998 by Larry Page and Sergey Brin and has since become one of the largest and most influential companies in the world.',
+        officeLocations:'https://maps.app.goo.gl/wNGqZzfuHEWcoXiC'
+
+
+    },
     applicants: [
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
         {
-        name: 'John Cartel',
-        id: '#A00000369',
-        appliedAt: '21 Jun 2024',
-        status: 'WaitList',
-        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
-    },
+            name: 'John Cartel',
+            id: '#A00000369',
+            appliedAt: '21 Jun 2024',
+            status: 'WaitList',
+            photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+        },
 
 
-],
+    ],
 
 };
 
 
-const ComGetJob = ({ setRenderComponent,setHeading }) => {
+const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
 
     const [applicants, setApplicants] = useState([...JobData.applicants])
     const [data, setData] = useState({ ...JobData })
@@ -125,16 +145,19 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
         setHeading('#A00000369')
-      }, []);
+    }, []);
 
 
 
-    const subTitle = {
+    let subTitle = {
         jobStatus: 'Job Status',
         totalResume: 'Total Resume',
-        TotalHire: 'Total Hire'
-    }
-
+        TotalHire: 'Total Hire',
+        recurStatus: 'Recruiter Status',
+        totalJobPost: 'Total Job Posts',
+        totalResume: 'Total Resume'
+    } 
+   
     const profTitle = {
         companyName: "Company Name",
         recruiterId: 'Recruiter ID',
@@ -152,13 +175,28 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
         about: 'About Job',
         eligibility: 'Eligibility to Apply',
 
+
+        VerificationDocument: 'Verification Document',
+        AboutCompany: 'About Company',
+        officeLocations:'Office Locations'
+
     }
 
 
-    const status = Object.entries(data.status).map(([key, value]) => {
+    const status = page=='recru' ?  Object.entries(data.statusRecruiter).map(([key, value]) => {
+
+        return { value, label: subTitle[key] };
+    }) : Object.entries(data.status).map(([key, value]) => {
+        
         return { value, label: subTitle[key] };
     });
-    const profile = Object.entries(data.profile).map(([key, value]) => {
+   
+    const profile = page=='recru'? 
+    
+    Object.entries(data.profileRecru).map(([key, value]) => {
+        return { value, label: profTitle[key] };
+    })
+    : Object.entries(data.profile).map(([key, value]) => {
         return { value, label: profTitle[key] };
     });
 
@@ -183,6 +221,19 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
 
 
     }, [approve])
+
+    const dropDownOption = page=='recru' ?
+    [
+        'Account Managers',
+        'Job Posts'
+    ]
+    
+    :
+       [ 'Chat Conversations',
+        'Data Access'
+    ]
+
+
     return (
         <>
             {isOpen && (
@@ -199,8 +250,8 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                                 <div className='bg-[#2a2f41] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#2a2f41] hover:border-[#00d8ff] hover:text-[#00d8ff]
                     '
-                                // onClick={() => setRenderComponent(1)}
-                                onClick={() => setIsAlert(false)}
+                                    // onClick={() => setRenderComponent(1)}
+                                    onClick={() => setIsAlert(false)}
                                 >
                                     <span className='font-semibold'>
                                         No
@@ -209,12 +260,12 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                                 <div className='bg-[#2a2f41] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#2a2f41] hover:border-[#00d8ff] hover:text-[#00d8ff]
                     '
-                                // onClick={() => setRenderComponent(1)}
-                                onClick={() => {
-                                    setApprove('Pending');
-                                    setIsAlert(false)
-                                
-                                }}
+                                    // onClick={() => setRenderComponent(1)}
+                                    onClick={() => {
+                                        setApprove('Pending');
+                                        setIsAlert(false)
+
+                                    }}
                                 >
                                     <span className='font-semibold'>
                                         Yes
@@ -232,15 +283,15 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                         <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
                     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
 
+                
                     
-                    
-                    '  onClick={() => setRenderComponent(1)}
+                    '  onClick={() => setRenderComponent(src)}
                         >
                             <span className=''>
                                 <BackBlack />
                             </span>
                         </div>
-                        {approve == 'Pending' && <>
+                        {(page!='resume' && approve == 'Pending') && <>
                             <div className='bg-[#1C202C] flex active:bg-[#00e262] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#1C202C] hover:border-[#00e262] hover:text-[#00e262]
 
@@ -250,7 +301,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                                 onClick={() => setApprove('Active')}
                             >
                                 <span className='font-semibold'>
-                                    Approve
+                                   {page=='recru' ? 'Save & ' : ''} Approve
                                 </span>
                             </div>
                             <div className='bg-[#1C202C] flex active:bg-[#ff5757] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
@@ -267,7 +318,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                             </div>
 
                         </>}
-                        {approve != 'Pending' && <>
+                        {(approve != 'Pending' && page!='resume') && <>
                             <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
 
@@ -276,7 +327,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                     '
                                 // onClick={() => setApprove('Pending')}
                                 onClick={() => setIsAlert(true)}
-                                
+
                             >
                                 <span className='font-semibold'>
                                     Revoke Status
@@ -287,7 +338,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                         </>}
 
                     </div>
-                    <div>
+                    {(page == 'jobs') ? <div>
                         <div className="relative">
                             <input
                                 className="bg-[#1C202C] rounded-[8px]  px-[12px] text-white resize-none overflow-hidden h-auto min-h-[40px] placeholder:text-[#6290c0] placeholder:opacity-90  w-[350px]"
@@ -297,6 +348,56 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                             <FaSearch className="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                         </div>
                     </div>
+                    :
+
+                    (page=='resume' || page=='recru') 
+                        ?
+                        <div>
+                            <div className="relative inline-block text-left z-20">
+                                {/* Dropdown Button */}
+                                <button
+                                    onClick={() => setIsOpen(!isOpen)}
+                                    className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''} group `}
+                                >
+                                    <span>
+                                        {
+                                            // com == 1 ? 'All Jobs' : com == 2 ? 'Data Access' : 'Chat Conversations'
+                                            dropDownOption[com]
+                                        }
+
+                                    </span>
+                                    <span className={`${isOpen ? 'text-[#00d8ff]' : ''} group-hover:text-[#00d8ff]`}>
+                                        <DropDownSvg />
+                                    </span>
+                                </button>
+
+                                {/* Dropdown Menu */}
+                                {isOpen && (
+                                    <div className="absolute z-30 mt-[12px] w-[200px] bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700">
+                                        <ul className="py-1">
+                                            {
+
+                                                dropDownOption.map((ele, ind) => {
+                                                    return (
+                                                        <li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                            key={ind}
+                                                            onClick={() => {
+                                                                setCom(ind)
+                                                                setIsOpen(false)
+                                                            }}
+                                                        >{ele}</li>
+                                                    )
+                                                })
+                                            }
+
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                                :<></>
+
+                    }
 
 
 
@@ -354,7 +455,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
 
                                         return (
                                             <>
-                                                {(ele.label == 'About Job' || ele.label == 'Eligibility to Apply') ?
+                                                {(ele.label == 'About Job' || ele.label == 'Eligibility to Apply' || ele.label=='Verification Document' || ele.label=='About Company' || ele.label=='Office Locations') ?
                                                     <>
 
                                                         <div className=''>
@@ -409,13 +510,40 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
                     <div className="bg-[#1C202C] border-2 overflow-auto border-[#FFFFFF] rounded-[16px] w-[50%]">
                         {/* <Resume resume={resume} /> */}
                         {
-                            (applicants && applicants.length > 0) ?
+                        page=='resume' ? 
+                        <>
+                            {
+                                com==0 ?
+                                <ChatConversion />
+                                
+                                 : com==1 ? <>
+                                 
+                                 <ContactTable />
+                                  </> : <></>
+                            }
+                        </> :
+                        page=='recru' ? 
+                        <>
+                            {
+                                com==0 ?
+                                <ChatConversion />
+                                
+                                 : com==1 ? <>
+                                 
+                                 <AppliedJob setRenderComponent={setRenderComponent} src={src2} />
+                                  </> : <></>
+                            }
+                        </> :
+                        
+                        (    (applicants && applicants.length > 0) ?
                                 <>
-                                    <ApplicantTable applicants={applicants} setRenderComponent={setRenderComponent} />
+                                    <ApplicantTable applicants={applicants} setRenderComponent={setRenderComponent} src={src} src1={src1} />
                                 </>
 
 
                                 : <NoApplicants />
+                        ) 
+                        
                         }
                     </div>
 
@@ -430,7 +558,7 @@ const ComGetJob = ({ setRenderComponent,setHeading }) => {
 }
 
 
-const ApplicantTable = ({ applicants, setRenderComponent }) => {
+const ApplicantTable = ({ applicants, setRenderComponent ,src,src1}) => {
 
 
 
@@ -450,7 +578,7 @@ const ApplicantTable = ({ applicants, setRenderComponent }) => {
                                     <div className='flex p-[12px] space-x-[12px] w-full bg-[#2a2f41] rounded-[8px] hover:border-[2px] hover:border-[#6290c0] active:border-[#00d8ff] active:border-[2px]
 
 ]'
-                                        onClick={() => setRenderComponent(4)}
+                                        onClick={() => setRenderComponent(src1)}
                                     >
                                         <div className="min-w-[100px] h-[100px] rounded-full overflow-hidden">
                                             <img src={ele.photoUrl}
@@ -470,7 +598,7 @@ const ApplicantTable = ({ applicants, setRenderComponent }) => {
 
                                                     return (
                                                         <>
-                                                            <span className={`${'name'==key ? 'font-semibold pb-[12px]' : ''}`}>{value}</span>
+                                                            <span className={`${'name' == key ? 'font-semibold pb-[12px]' : ''}`}>{value}</span>
                                                         </>
                                                     )
                                                 })

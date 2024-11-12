@@ -18,7 +18,7 @@ const Page = () => {
       </h1>
       <div className="content px-[40px] mt-[60px] ">
         {
-          renderComponent == 1 ? <ComJobTable setRenderComponent={setRenderComponent} setHeading={setHeading} /> : renderComponent == 2 ? <ComAddJob setRenderComponent={setRenderComponent} setHeading={setHeading} /> : renderComponent == 3 ? <ComGetJob setRenderComponent={setRenderComponent}setHeading={setHeading} /> : renderComponent == 4 ? <ComUserProfile setRenderComponent={setRenderComponent}setHeading={setHeading} /> : <></>
+          renderComponent == 1 ? <ComJobTable setRenderComponent={setRenderComponent} setHeading={setHeading} src={2} src1={3} /> : renderComponent == 2 ? <ComAddJob setRenderComponent={setRenderComponent} setHeading={setHeading} src={1} /> : renderComponent == 3 ? <ComGetJob page={'jobs'} setRenderComponent={setRenderComponent} setHeading={setHeading} src={1} src1={4}/> : renderComponent == 4 ? <ComUserProfile setRenderComponent={setRenderComponent} setHeading={setHeading} src={3}  /> : <></>
         }
       </div>
       </main>
