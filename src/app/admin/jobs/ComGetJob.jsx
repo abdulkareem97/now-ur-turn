@@ -135,6 +135,15 @@ const JobData = {
 
 };
 
+const recrutors= [
+    {
+        name: 'Jasmin',
+        id: '#A0000000739',
+        appliedAt: '#Joined 11 Dec 2022',
+        status: '#HR Assistant',
+        photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'
+    }
+]
 
 const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
 
@@ -526,7 +535,7 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
                         <>
                             {
                                 com==0 ?
-                                <ChatConversion />
+                                <ApplicantTable applicants={recrutors} setRenderComponent={setRenderComponent} src={6} src1={6} />
                                 
                                  : com==1 ? <>
                                  
@@ -630,6 +639,8 @@ const NoApplicants = () => {
     )
 }
 
+
+export {ApplicantTable}
 
 
 
