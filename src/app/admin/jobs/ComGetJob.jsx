@@ -11,9 +11,9 @@ const JobData = {
         jobStatus: 'Pending',
         totalResume: '09 Jan 2024',
         TotalHire: '#A00000369',
-      
+
     },
-    statusRecruiter:{
+    statusRecruiter: {
         recurStatus: 'Pending',
         totalJobPost: '0',
         totalResume: '0'
@@ -47,7 +47,7 @@ const JobData = {
         rejectedDate: "-",
         VerificationDocument: 'Aadhar.pdf',
         AboutCompany: 'Google is a multinational technology company that specializes in internet-related services and products. It is best known for its search engine, which allows users to search for information on the internet. Google also offers a variety of other products and services such as email, cloud storage, maps, advertising, and more. The company was founded in 1998 by Larry Page and Sergey Brin and has since become one of the largest and most influential companies in the world.',
-        officeLocations:'https://maps.app.goo.gl/wNGqZzfuHEWcoXiC'
+        officeLocations: 'https://maps.app.goo.gl/wNGqZzfuHEWcoXiC'
 
 
     },
@@ -135,7 +135,7 @@ const JobData = {
 
 };
 
-const recrutors= [
+const recrutors = [
     {
         name: 'Jasmin',
         id: '#A0000000739',
@@ -145,7 +145,7 @@ const recrutors= [
     }
 ]
 
-const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
+const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) => {
 
     const [applicants, setApplicants] = useState([...JobData.applicants])
     const [data, setData] = useState({ ...JobData })
@@ -165,8 +165,8 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
         recurStatus: 'Recruiter Status',
         totalJobPost: 'Total Job Posts',
         totalResume: 'Total Resume'
-    } 
-   
+    }
+
     const profTitle = {
         companyName: "Company Name",
         recruiterId: 'Recruiter ID',
@@ -187,27 +187,27 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
 
         VerificationDocument: 'Verification Document',
         AboutCompany: 'About Company',
-        officeLocations:'Office Locations'
+        officeLocations: 'Office Locations'
 
     }
 
 
-    const status = page=='recru' ?  Object.entries(data.statusRecruiter).map(([key, value]) => {
+    const status = page == 'recru' ? Object.entries(data.statusRecruiter).map(([key, value]) => {
 
         return { value, label: subTitle[key] };
     }) : Object.entries(data.status).map(([key, value]) => {
-        
+
         return { value, label: subTitle[key] };
     });
-   
-    const profile = page=='recru'? 
-    
-    Object.entries(data.profileRecru).map(([key, value]) => {
-        return { value, label: profTitle[key] };
-    })
-    : Object.entries(data.profile).map(([key, value]) => {
-        return { value, label: profTitle[key] };
-    });
+
+    const profile = page == 'recru' ?
+
+        Object.entries(data.profileRecru).map(([key, value]) => {
+            return { value, label: profTitle[key] };
+        })
+        : Object.entries(data.profile).map(([key, value]) => {
+            return { value, label: profTitle[key] };
+        });
 
     const [isOpen, setIsOpen] = useState(false);
     const [com, setCom] = useState(1);
@@ -231,16 +231,16 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
 
     }, [approve])
 
-    const dropDownOption = page=='recru' ?
-    [
-        'Account Managers',
-        'Job Posts'
-    ]
-    
-    :
-       [ 'Chat Conversations',
-        'Data Access'
-    ]
+    const dropDownOption = page == 'recru' ?
+        [
+            'Account Managers',
+            'Job Posts'
+        ]
+
+        :
+        ['Chat Conversations',
+            'Data Access'
+        ]
 
 
     return (
@@ -300,7 +300,7 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
                                 <BackBlack />
                             </span>
                         </div>
-                        {(page!='resume' && approve == 'Pending') && <>
+                        {(page != 'resume' && approve == 'Pending') && <>
                             <div className='bg-[#1C202C] flex active:bg-[#00e262] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#1C202C] hover:border-[#00e262] hover:text-[#00e262]
 
@@ -310,7 +310,7 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
                                 onClick={() => setApprove('Active')}
                             >
                                 <span className='font-semibold'>
-                                   {page=='recru' ? 'Save & ' : ''} Approve
+                                    {page == 'recru' ? 'Save & ' : ''} Approve
                                 </span>
                             </div>
                             <div className='bg-[#1C202C] flex active:bg-[#ff5757] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
@@ -327,7 +327,7 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
                             </div>
 
                         </>}
-                        {(approve != 'Pending' && page!='resume') && <>
+                        {(approve != 'Pending' && page != 'resume') && <>
                             <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
 
@@ -357,54 +357,54 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
                             <FaSearch className="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                         </div>
                     </div>
-                    :
+                        :
 
-                    (page=='resume' || page=='recru') 
-                        ?
-                        <div>
-                            <div className="relative inline-block text-left z-20">
-                                {/* Dropdown Button */}
-                                <button
-                                    onClick={() => setIsOpen(!isOpen)}
-                                    className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''} group `}
-                                >
-                                    <span>
-                                        {
-                                            // com == 1 ? 'All Jobs' : com == 2 ? 'Data Access' : 'Chat Conversations'
-                                            dropDownOption[com]
-                                        }
-
-                                    </span>
-                                    <span className={`${isOpen ? 'text-[#00d8ff]' : ''} group-hover:text-[#00d8ff]`}>
-                                        <DropDownSvg />
-                                    </span>
-                                </button>
-
-                                {/* Dropdown Menu */}
-                                {isOpen && (
-                                    <div className="absolute z-30 mt-[12px] w-[200px] bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700">
-                                        <ul className="py-1">
+                        (page == 'resume' || page == 'recru')
+                            ?
+                            <div>
+                                <div className="relative inline-block text-left z-20">
+                                    {/* Dropdown Button */}
+                                    <button
+                                        onClick={() => setIsOpen(!isOpen)}
+                                        className={`bg-[#1C202C] text-white h-[40px] px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none w-[200px] justify-between ${isOpen ? 'border-[#00d8ff] border-2' : ''} group `}
+                                    >
+                                        <span>
                                             {
-
-                                                dropDownOption.map((ele, ind) => {
-                                                    return (
-                                                        <li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
-                                                            key={ind}
-                                                            onClick={() => {
-                                                                setCom(ind)
-                                                                setIsOpen(false)
-                                                            }}
-                                                        >{ele}</li>
-                                                    )
-                                                })
+                                                // com == 1 ? 'All Jobs' : com == 2 ? 'Data Access' : 'Chat Conversations'
+                                                dropDownOption[com]
                                             }
 
-                                        </ul>
-                                    </div>
-                                )}
+                                        </span>
+                                        <span className={`${isOpen ? 'text-[#00d8ff]' : ''} group-hover:text-[#00d8ff]`}>
+                                            <DropDownSvg />
+                                        </span>
+                                    </button>
+
+                                    {/* Dropdown Menu */}
+                                    {isOpen && (
+                                        <div className="absolute z-30 mt-[12px] w-[200px] bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700">
+                                            <ul className="py-1">
+                                                {
+
+                                                    dropDownOption.map((ele, ind) => {
+                                                        return (
+                                                            <li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
+                                                                key={ind}
+                                                                onClick={() => {
+                                                                    setCom(ind)
+                                                                    setIsOpen(false)
+                                                                }}
+                                                            >{ele}</li>
+                                                        )
+                                                    })
+                                                }
+
+                                            </ul>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                                :<></>
+                            : <></>
 
                     }
 
@@ -464,47 +464,55 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
 
                                         return (
                                             <>
-                                                {(ele.label == 'About Job' || ele.label == 'Eligibility to Apply' || ele.label=='Verification Document' || ele.label=='About Company' || ele.label=='Office Locations') ?
-                                                    <>
+                                                {
+                                                    ele.label == 'Office Locations' ?
+                                                        <>
+                                                            <OfficeLocation label={ele.label} value={ele.value} />
+                                                        </>
 
-                                                        <div className=''>
-                                                            <div className="text-[#FFE683]">
-                                                                <span className="">{ele.label}</span>
-                                                            </div>
-                                                            <div className='space-y-[12px] mt-[6px]'>
+                                                        :
+
+                                                        (ele.label == 'About Job' || ele.label == 'Eligibility to Apply' || ele.label == 'Verification Document' || ele.label == 'About Company') ?
+                                                            <>
+
+                                                                <div className=''>
+                                                                    <div className="text-[#FFE683]">
+                                                                        <span className="">{ele.label}</span>
+                                                                    </div>
+                                                                    <div className='space-y-[12px] mt-[6px]'>
 
 
-                                                                <>
-                                                                    <div className='bg-[#0D0D19] flex p-[12px] rounded-[8px] w-full  flex-col'>
-                                                                        <span>{ele.value}</span>
+                                                                        <>
+                                                                            <div className='bg-[#0D0D19] flex p-[12px] rounded-[8px] w-full  flex-col'>
+                                                                                <span>{ele.value}</span>
+
+
+                                                                            </div>
+                                                                        </>
+
 
 
                                                                     </div>
-                                                                </>
-
-
-
-                                                            </div>
-                                                        </div>
-                                                    </>
+                                                                </div>
+                                                            </>
 
 
 
 
-                                                    : <div className='bg-[#0D0D19] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
-                                                        <span className="text-[#FFE683]  w-[110px]">
-                                                            {ele.label}
-                                                        </span>
-                                                        <span className='px-[6px]'>
-                                                            :
-                                                        </span>
-                                                        <span className="">
-                                                            {
-                                                                ele.value
-                                                            }
-                                                        </span>
+                                                            : <div className='bg-[#0D0D19] flex px-[12px] h-[40px] items-center rounded-[8px] w-full'>
+                                                                <span className="text-[#FFE683]  w-[110px]">
+                                                                    {ele.label}
+                                                                </span>
+                                                                <span className='px-[6px]'>
+                                                                    :
+                                                                </span>
+                                                                <span className="">
+                                                                    {
+                                                                        ele.value
+                                                                    }
+                                                                </span>
 
-                                                    </div>}
+                                                            </div>}
                                             </>
                                         )
                                     })
@@ -519,40 +527,40 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
                     <div className="bg-[#1C202C] border-2 overflow-auto border-[#FFFFFF] rounded-[16px] w-[50%]">
                         {/* <Resume resume={resume} /> */}
                         {
-                        page=='resume' ? 
-                        <>
-                            {
-                                com==0 ?
-                                <ChatConversion />
-                                
-                                 : com==1 ? <>
-                                 
-                                 <ContactTable />
-                                  </> : <></>
-                            }
-                        </> :
-                        page=='recru' ? 
-                        <>
-                            {
-                                com==0 ?
-                                <ApplicantTable applicants={recrutors} setRenderComponent={setRenderComponent} src={6} src1={6} />
-                                
-                                 : com==1 ? <>
-                                 
-                                 <AppliedJob setRenderComponent={setRenderComponent} src={src2} />
-                                  </> : <></>
-                            }
-                        </> :
-                        
-                        (    (applicants && applicants.length > 0) ?
+                            page == 'resume' ?
                                 <>
-                                    <ApplicantTable applicants={applicants} setRenderComponent={setRenderComponent} src={src} src1={src1} />
-                                </>
+                                    {
+                                        com == 0 ?
+                                            <ChatConversion />
+
+                                            : com == 1 ? <>
+
+                                                <ContactTable />
+                                            </> : <></>
+                                    }
+                                </> :
+                                page == 'recru' ?
+                                    <>
+                                        {
+                                            com == 0 ?
+                                                <ApplicantTable applicants={recrutors} setRenderComponent={setRenderComponent} src={6} src1={6} />
+
+                                                : com == 1 ? <>
+
+                                                    <AppliedJob setRenderComponent={setRenderComponent} src={src2} />
+                                                </> : <></>
+                                        }
+                                    </> :
+
+                                    ((applicants && applicants.length > 0) ?
+                                        <>
+                                            <ApplicantTable applicants={applicants} setRenderComponent={setRenderComponent} src={src} src1={src1} />
+                                        </>
 
 
-                                : <NoApplicants />
-                        ) 
-                        
+                                        : <NoApplicants />
+                                    )
+
                         }
                     </div>
 
@@ -566,8 +574,103 @@ const ComGetJob = ({ setRenderComponent, src,src1,src2,setHeading,page }) => {
     )
 }
 
+const OfficeLocation = ({ label, value }) => {
+    const handleCopy = () => {
+        navigator.clipboard.writeText(value).then(() => {
+            // alert("Link copied to clipboard!");
+            console.log('copied')
+        });
+    };
 
-const ApplicantTable = ({ applicants, setRenderComponent ,src,src1}) => {
+    return (
+
+        <>
+
+            <div className=''>
+                <div className="text-[#FFE683]">
+                    <span className="">{label}</span>
+                </div>
+                <div className='space-y-[12px] mt-[6px]'>
+
+
+                    {/* <>
+                                                                            <div className='bg-[#0D0D19] flex p-[12px] rounded-[8px] w-full  flex-col'>
+                                                                                <span>{value}</span>
+
+
+                                                                            </div>
+                                                                        </> */}
+
+                    <>
+                        <div className='bg-[#0D0D19] flex p-[12px] rounded-[8px] w-full  flex-col'>
+                            <div className="flex space-x-[12px]">
+                                <div className="bg-[#1C202C] p-[12px] w-full rounded-[8px]">
+                                    {value}
+                                </div>
+                                <button onClick={handleCopy} className="bg-[#1C202C] p-[12px] rounded-[8px]">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5 text-white hover:text-white cursor-pointer"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path d="M7 2a3 3 0 00-3 3v10a3 3 0 003 3h6a3 3 0 003-3V9a1 1 0 10-2 0v6a1 1 0 01-1 1H7a1 1 0 01-1-1V5a1 1 0 011-1h6a1 1 0 001-1V3a1 1 0 00-1-1H7z" />
+                                        <path d="M9 9a1 1 0 011-1h6a1 1 0 011 1v7a3 3 0 01-3 3h-6a1 1 0 01-1-1V9z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className="mt-[12px]">
+                                <textarea
+                                    className="bg-[#0D0D19] rounded-[8px] w-full px-[12px] text-white resize-none overflow-hidden h-auto min-h-[40px] py-[10px] border-2 border-[#1C202C] placeholder:text-[#6290c0] placeholder:opacity-90"
+                                    rows="1"
+                                    onInput={(e) => {
+                                        e.target.style.height = "auto";
+                                        e.target.style.height = `${e.target.scrollHeight}px`;
+                                    }}
+                                    // onChange={(e) => handleInputChange(e, key)}
+                                    placeholder="Embed link"
+                                />
+
+                            </div>
+
+
+                        </div>
+                    </>
+
+
+
+                </div>
+            </div>
+        </>
+
+
+        // <div className="space-y-2 mt-4">
+        //     <div className="text-[#FFE683]">
+        //         <span>{label}</span>
+        //     </div>
+        //     <div className="bg-[#0D0D19] flex items-center justify-between p-3 rounded-lg w-full">
+        //         <span className="text-white break-all">{value}</span>
+        //         <button onClick={handleCopy} className="ml-4">
+        //             <svg
+        //                 xmlns="http://www.w3.org/2000/svg"
+        //                 className="h-5 w-5 text-white hover:text-white cursor-pointer"
+        //                 viewBox="0 0 20 20"
+        //                 fill="currentColor"
+        //             >
+        //                 <path d="M7 2a3 3 0 00-3 3v10a3 3 0 003 3h6a3 3 0 003-3V9a1 1 0 10-2 0v6a1 1 0 01-1 1H7a1 1 0 01-1-1V5a1 1 0 011-1h6a1 1 0 001-1V3a1 1 0 00-1-1H7z" />
+        //                 <path d="M9 9a1 1 0 011-1h6a1 1 0 011 1v7a3 3 0 01-3 3h-6a1 1 0 01-1-1V9z" />
+        //             </svg>
+        //         </button>
+        //     </div>
+        //     <div className="text-blue-500 cursor-pointer hover:underline mt-2">
+        //         Embed link
+        //     </div>
+        // </div>
+    );
+};
+
+
+const ApplicantTable = ({ applicants, setRenderComponent, src, src1 }) => {
 
 
 
@@ -640,7 +743,7 @@ const NoApplicants = () => {
 }
 
 
-export {ApplicantTable}
+export { ApplicantTable }
 
 
 

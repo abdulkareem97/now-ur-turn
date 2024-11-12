@@ -601,18 +601,18 @@ const AppliedJob = ({setRenderComponent,src}) => {
                                     key={ele.name}
                                     onClick={() => setRenderComponent(4)}
                                 >
-                                    <div className="min-w-[66px] h-[66px] rounded-full overflow-hidden">
+                                    <div className="min-w-[95px] h-[95px] rounded-[8px] overflow-hidden">
                                         <img src={ele.img}
                                             // width={'60px'}
                                             // height={'30px'}
-                                            className=' object-cover w-[66px] h-[66px] '
+                                            className=' object-cover w-[95px] h-[95px] '
                                         // style={{borderRight:'100%'}}
                                         />
 
                                     </div>
-                                    <div className="flex flex-col  w-full font-semibold">
+                                    <div className="flex flex-col  w-full">
 
-                                        <span>{ele.name}</span>
+                                        <span className='font-semibold pb-[12px]'>{ele.name}</span>
                                         <span>{ele.shortDesc}</span>
 
 
