@@ -19,7 +19,7 @@ const Page = () => {
       <div className="content px-[40px] mt-[60px] ">
 
         { 
-          renderComponent == 1 ? <ComRecruitersTable setRenderComponent={setRenderComponent} setHeading={setHeading} src={3} /> :  renderComponent == 3 ? <ComGetJob setRenderComponent={setRenderComponent} setHeading={setHeading} page='recru' src={1} src2={4}/> :   renderComponent == 4 ? <ComGetJob setRenderComponent={setRenderComponent} setHeading={setHeading} page='jobs' src={3} src1={5} /> : renderComponent == 5 ? <ComUserProfile setRenderComponent={setRenderComponent} setHeading={setHeading}  src={4}/> : <></>
+          renderComponent == 1 ? <ComRecruitersTable setRenderComponent={setRenderComponent} setHeading={setHeading} src={3} /> :  renderComponent == 3 ? <ComGetJob setRenderComponent={setRenderComponent} setHeading={setHeading} page='recru' src={1} src2={4}/> :   renderComponent == 4 ? <ComGetJob setRenderComponent={setRenderComponent} setHeading={setHeading} page='jobs' src={3} src1={5} hide={true} /> : renderComponent == 5 ? <ComUserProfile setRenderComponent={setRenderComponent} setHeading={setHeading}  src={4}/> : <></>
         }
 
 

@@ -145,10 +145,11 @@ const recrutors = [
     }
 ]
 
-const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) => {
+const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide }) => {
 
     const [applicants, setApplicants] = useState([...JobData.applicants])
     const [data, setData] = useState({ ...JobData })
+    const [embedLink,setEmbedLink] = useState('')
     // const [searchText,setSearchText] = useState('')
     // console.log(a)
     useEffect(() => {
@@ -210,7 +211,7 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) =>
         });
 
     const [isOpen, setIsOpen] = useState(false);
-    const [com, setCom] = useState(1);
+    const [com, setCom] = useState(0);
     const searchTextMethod = (value) => {
         setApplicants([...data.applicants].filter((e) => (e.name.toLowerCase().includes(value.toLowerCase()) || e.id.toLowerCase().includes(value.toLowerCase()))))
     }
@@ -238,8 +239,9 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) =>
         ]
 
         :
-        ['Chat Conversations',
-            'Data Access'
+        [
+            'Data Access',
+            'Chat Conversations',
         ]
 
 
@@ -300,13 +302,16 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) =>
                                 <BackBlack />
                             </span>
                         </div>
-                        {(page != 'resume' && approve == 'Pending') && <>
-                            <div className='bg-[#1C202C] flex active:bg-[#00e262] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
-                    border-[2px] border-[#1C202C] hover:border-[#00e262] hover:text-[#00e262]
+                        {(page != 'resume' && page!='recru' && approve == 'Pending' && !hide) && <>
+                            <div className={`bg-[#1C202C] flex  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
+                    border-[2px] border-[#1C202C] 
+                                    ${(embedLink!='' || page=='jobs' ) ? 'hover:border-[#00e262] hover:text-[#00e262] active:bg-[#00e262] active:text-black  ' :''  
 
+                                    }
+                                    ${(embedLink=='' && page=='recru')  ? 'bg-[#6290c0]' : ''}
                     
                     
-                    '
+                    `}
                                 onClick={() => setApprove('Active')}
                             >
                                 <span className='font-semibold'>
@@ -327,7 +332,7 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) =>
                             </div>
 
                         </>}
-                        {(approve != 'Pending' && page != 'resume') && <>
+                        {(approve != 'Pending' && page != 'resume' && page!='recru' && !hide) && <>
                             <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
 
@@ -467,7 +472,7 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) =>
                                                 {
                                                     ele.label == 'Office Locations' ?
                                                         <>
-                                                            <OfficeLocation label={ele.label} value={ele.value} />
+                                                            <OfficeLocation label={ele.label} value={ele.value} embedLink={embedLink} setEmbedLink={setEmbedLink} />
                                                         </>
 
                                                         :
@@ -530,10 +535,10 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) =>
                             page == 'resume' ?
                                 <>
                                     {
-                                        com == 0 ?
+                                        com == 1 ?
                                             <ChatConversion />
 
-                                            : com == 1 ? <>
+                                            : com == 0 ? <>
 
                                                 <ContactTable />
                                             </> : <></>
@@ -574,7 +579,7 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page }) =>
     )
 }
 
-const OfficeLocation = ({ label, value }) => {
+const OfficeLocation = ({ label, value ,embedLink,setEmbedLink}) => {
     const handleCopy = () => {
         navigator.clipboard.writeText(value).then(() => {
             // alert("Link copied to clipboard!");
@@ -607,10 +612,11 @@ const OfficeLocation = ({ label, value }) => {
                                 <div className="bg-[#1C202C] p-[12px] w-full rounded-[8px]">
                                     {value}
                                 </div>
-                                <button onClick={handleCopy} className="bg-[#1C202C] p-[12px] rounded-[8px]">
+                                <button onClick={handleCopy} className="bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
+                    border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5 text-white hover:text-white cursor-pointer"
+                                        className="h-5 w-5 cursor-pointer"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -629,6 +635,8 @@ const OfficeLocation = ({ label, value }) => {
                                     }}
                                     // onChange={(e) => handleInputChange(e, key)}
                                     placeholder="Embed link"
+                                    value={embedLink}
+                                    onChange={(e)=>setEmbedLink(e.target.value)}
                                 />
 
                             </div>
