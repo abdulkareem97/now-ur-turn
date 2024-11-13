@@ -619,7 +619,7 @@ const OfficeLocation = ({ label, value }) => {
                                     </svg>
                                 </button>
                             </div>
-                            <div className="mt-[12px]">
+                            <div className="mt-[12px] flex items-center">
                                 <textarea
                                     className="bg-[#0D0D19] rounded-[8px] w-full px-[12px] text-white resize-none overflow-hidden h-auto min-h-[40px] py-[10px] border-2 border-[#1C202C] placeholder:text-[#6290c0] placeholder:opacity-90"
                                     rows="1"
