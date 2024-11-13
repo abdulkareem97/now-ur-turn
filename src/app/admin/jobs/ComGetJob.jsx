@@ -302,7 +302,7 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide 
                                 <BackBlack />
                             </span>
                         </div>
-                        {(page != 'resume' && page!='recru' && approve == 'Pending' && !hide) && <>
+                        {(page != 'resume' && approve == 'Pending' && !hide) && <>
                             <div className={`bg-[#1C202C] flex  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#1C202C] 
                                     ${(embedLink!='' || page=='jobs' ) ? 'hover:border-[#00e262] hover:text-[#00e262] active:bg-[#00e262] active:text-black  ' :''  
@@ -332,7 +332,7 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide 
                             </div>
 
                         </>}
-                        {(approve != 'Pending' && page != 'resume' && page!='recru' && !hide) && <>
+                        {(approve != 'Pending' && page != 'resume' && !hide) && <>
                             <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] 
                     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
 
