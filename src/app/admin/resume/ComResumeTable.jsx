@@ -16,13 +16,13 @@ const allResume = [
         rejectedDate: '-',
         resumeStatus: 'Active'
     },
- 
+
 ]
-const ComResumeTable = ({setRenderComponent,setHeading}) => {
+const ComResumeTable = ({ setRenderComponent, setHeading, setAppliedJobBack }) => {
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
         setHeading('Resume')
-      }, []);
+    }, []);
     const [isOpen, setIsOpen] = useState(false);
     const [com, setCom] = useState(1);
     let dropDownOption = [
@@ -41,7 +41,7 @@ const ComResumeTable = ({setRenderComponent,setHeading}) => {
             <div className="relative">
                 <div className='flex justify-between text-white  text-[14px]'>
                     <div>
-                       
+
 
                     </div>
                     <div>
@@ -69,41 +69,41 @@ const ComResumeTable = ({setRenderComponent,setHeading}) => {
                                     <ul className="py-1">
                                         {
 
-                                            dropDownOption.map((ele,ind)=>{
+                                            dropDownOption.map((ele, ind) => {
                                                 return (
                                                     <li className="px-[12px] py-2  hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer "
-                                                    key={ind}
-                                                    onClick={() => {
-                                                        setCom(ind)
-                                                        setIsOpen(false)
-                                                    }}
+                                                        key={ind}
+                                                        onClick={() => {
+                                                            setCom(ind)
+                                                            setIsOpen(false)
+                                                        }}
                                                     >{ele}</li>
                                                 )
                                             })
-                                           }
+                                        }
 
-                                </ul>
+                                    </ul>
                                 </div>
                             )}
+                        </div>
                     </div>
+
+
+
                 </div>
+                <div className='mt-[12px] flex space-x-[40px] text-white text-[14px] h-[73vh]'>
+                    <div className="bg-[#1C202C] border-2 overflow-auto border-[#FFFFFF] rounded-[16px] w-full">
+                        <ResumeTable setRenderComponent={setRenderComponent} setAppliedJobBack={setAppliedJobBack} />
+                    </div>
 
-
-
-            </div>
-            <div className='mt-[12px] flex space-x-[40px] text-white text-[14px] h-[73vh]'>
-                <div className="bg-[#1C202C] border-2 overflow-auto border-[#FFFFFF] rounded-[16px] w-full">
-                    <ResumeTable setRenderComponent={setRenderComponent}/>
                 </div>
-
             </div>
-        </div>
 
 
         </>
     )
 }
-const ResumeTable = ({ setRenderComponent }) => {
+const ResumeTable = ({ setRenderComponent,setAppliedJobBack }) => {
     return (
         <div className="overflow-auto">
             <table className="table-fixed w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
@@ -129,7 +129,15 @@ const ResumeTable = ({ setRenderComponent }) => {
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{i}</td>
                                 <td
                                     className="px-[12px] text-center border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer border-r-[#ffffff]"
-                                    onClick={() => setRenderComponent(3)}
+                                    onClick={() => {
+                                        if (setAppliedJobBack) {
+
+
+                                            setAppliedJobBack(0)
+                                        }
+                                        setRenderComponent(3)
+
+                                    }}
                                 >
                                     {ele.accountId}
                                 </td>

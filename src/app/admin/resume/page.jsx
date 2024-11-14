@@ -11,6 +11,7 @@ import ComGetJob from '../jobs/ComGetJob'
 const Page = () => {
   const [renderComponent, setRenderComponent] = useState(1)
   const [heading,setHeading] = useState('Resume')
+  const [AppliedJobBack,setAppliedJobBack] = useState(0)
   return (
     <>
      <main className={`w-full py-[40px] bg-[#0D0D19] ${renderComponent==2 ? 'h-[calc(100vh-50px)] overflow-y-auto' : ''}`}>
@@ -22,7 +23,10 @@ const Page = () => {
       <div className="content px-[40px] mt-[60px] ">
 
         { 
-          renderComponent == 1 ? <ComResumeTable setRenderComponent={setRenderComponent} setHeading={setHeading} src={3} /> :  renderComponent == 3 ? <ComUserProfile setRenderComponent={setRenderComponent}setHeading={setHeading} page='resume' src={1} /> :   renderComponent == 4 ? <ComGetJob setRenderComponent={setRenderComponent}setHeading={setHeading} page='resume' src={3}  /> : <></>
+          renderComponent == 1 ? <ComResumeTable setRenderComponent={setRenderComponent} setHeading={setHeading} src={3}  setAppliedJobBack={setAppliedJobBack} /> :  renderComponent == 3 ? <ComUserProfile AppliedJobBack={AppliedJobBack} setRenderComponent={setRenderComponent} setHeading={setHeading} page='resume' src={1} /> :   renderComponent == 4 ? <ComGetJob setRenderComponent={setRenderComponent} setHeading={setHeading} page='resume' src={3} 
+          AppliedJobBack={AppliedJobBack} setAppliedJobBack={setAppliedJobBack}
+          
+           /> : <></>
         }
 
        

@@ -106,7 +106,7 @@ const appliedJobList = [
 
 
 
-const ComUserProfile = ({ setRenderComponent, src,page,setHeading }) => {
+const ComUserProfile = ({ setRenderComponent, src,page,setHeading,AppliedJobBack }) => {
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
         setHeading('#A00000369')
@@ -177,9 +177,11 @@ const ComUserProfile = ({ setRenderComponent, src,page,setHeading }) => {
 
     }
 
+    console.log(AppliedJobBack);
+    
 
     const [isOpen, setIsOpen] = useState(false);
-    const [com, setCom] = useState(1);
+    const [com, setCom] = useState(AppliedJobBack || 1);
     const [approve, setApprove] = useState('Pending')
     const [isAlert, setIsAlert] = useState(false)
     const [data, setData] = useState({ ...userData1 })

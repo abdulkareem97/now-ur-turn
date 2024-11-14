@@ -145,7 +145,7 @@ const recrutors = [
     }
 ]
 
-const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide }) => {
+const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide,AppliedJobBack,setAppliedJobBack }) => {
 
     const [applicants, setApplicants] = useState([...JobData.applicants])
     const [data, setData] = useState({ ...JobData })
@@ -211,7 +211,7 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide 
         });
 
     const [isOpen, setIsOpen] = useState(false);
-    const [com, setCom] = useState(0);
+    const [com, setCom] = useState(AppliedJobBack || 0);
     const searchTextMethod = (value) => {
         setApplicants([...data.applicants].filter((e) => (e.name.toLowerCase().includes(value.toLowerCase()) || e.id.toLowerCase().includes(value.toLowerCase()))))
     }
@@ -296,7 +296,15 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide 
 
                 
                     
-                    '  onClick={() => setRenderComponent(src)}
+                    '  onClick={() => {
+                        if(setAppliedJobBack && page=='resume'){
+                            
+
+                            setAppliedJobBack(4)
+                        }
+                        setRenderComponent(src)
+
+                    }}
                         >
                             <span className=''>
                                 <BackBlack />
@@ -312,7 +320,13 @@ const ComGetJob = ({ setRenderComponent, src, src1, src2, setHeading, page,hide 
                     
                     
                     `}
-                                onClick={() => setApprove('Active')}
+
+                                onClick={() => {
+                                    if(embedLink=='' && page=='recru'){
+                                        return
+                                    }
+                                    setApprove('Active');
+                                }}
                             >
                                 <span className='font-semibold'>
                                     {page == 'recru' ? 'Save & ' : ''} Approve
