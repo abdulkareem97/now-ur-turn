@@ -467,7 +467,7 @@ const Resume = ({ resume, page }) => {
                         resume.map((ele) => {
 
 
-                            if (page != 'resume' && (ele.label == 'Created Date' || ele.label == 'Inactive From' || ele.label == 'Rejected Date' || ele.label == 'Total Ap. Jobs')) {
+                            if (page != 'resume' && (ele.label == 'Created Date' || ele.label == 'Total Ap. Jobs')) {
                                 return <></>
                             }
                             // const status = ele.value=='Active' 
