@@ -38,10 +38,5 @@ const Page = () => {
   )
 }
 
-// "next": "15.0.1",
-// "react": "19.0.0-rc-69d4b800-20241021",
-// "react-country-state-city": "^1.1.6",
-// "react-dom": "19.0.0-rc-69d4b800-20241021",
-// "react-icons": "^5.3.0"
 
 export default Page

@@ -467,9 +467,9 @@ const Resume = ({ resume, page }) => {
                         resume.map((ele) => {
 
 
-                            if (page != 'resume' && (ele.label == 'Created Date' || ele.label == 'Total Ap. Jobs')) {
-                                return <></>
-                            }
+                            // if (page != 'resume' && (ele.label == 'Created Date' || ele.label == 'Total Ap. Jobs')) {
+                            //     return <></>
+                            // }
                             // const status = ele.value=='Active' 
                             // { period: "June 2013 - April 2014", degree: "12th Grade",score:'85%',clg:'Madras School of Higher Secondary - Chennai',board:'Central Board of Higher Education (CBSE)' },
                             if (ele.label == 'Educational Qualifications' || ele.label == 'Job Experience') {
