@@ -25,7 +25,7 @@ const NotificationCom = ({ setRenderComponent, src, page, setHeading, AppliedJob
         // setHeading('#A00000369')
     }, []);
     const [showOption, setShowOption] = useState('')
-    const [audienceType, setAudienceType] = useState('Audience Type')
+    const [audienceType, setAudienceType] = useState('Audience type')
     const [notificationType, setNotificationType] = useState('Notification type')
     const [targetPage, setTargetPage] = useState('Target page')
     const [validity, setValidity] = useState('Validity')
@@ -80,6 +80,9 @@ const NotificationCom = ({ setRenderComponent, src, page, setHeading, AppliedJob
         'Pro Benefits',
         'Wallet'
     ]
+    const dropDownOptionTargetPageWarning = [
+        'None'
+    ]
 
     const dropDownOptionTargetPageIfUser = [
         'Front-end Development',
@@ -102,13 +105,6 @@ const NotificationCom = ({ setRenderComponent, src, page, setHeading, AppliedJob
         'Help Center',
         'Support',
         'None'
-
-
-
-
-
-
-
     ]
     const dropDownOptionValidity = [
         '1 Day',
@@ -136,7 +132,7 @@ const NotificationCom = ({ setRenderComponent, src, page, setHeading, AppliedJob
         'Notification message set': '',
         'Audience type option': '',
         'Notification type option': dropDownOptionNotification,
-        'Target page option': audienceType != 'All Users' ? dropDownOptionTargetPageIfUser : dropDownOptionTargetPage,
+        'Target page option': notificationType == 'Announcements' ? dropDownOptionTargetPageIfUser : notificationType == 'Offers' ? dropDownOptionTargetPage:dropDownOptionTargetPageWarning,
         'Validity option': dropDownOptionValidity,
         'Headline option': '',
         'Notification message option': '',
@@ -280,6 +276,9 @@ const NotificationCom = ({ setRenderComponent, src, page, setHeading, AppliedJob
         return false;
     }
 
+
+
+
     return (
         <>
             {isOpen && (
@@ -407,9 +406,13 @@ const NotificationCom = ({ setRenderComponent, src, page, setHeading, AppliedJob
                                                                     }
                                                                     className={`bg-[#0D0D19] text-white h-[40px] w-full px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none  justify-between ${showOption == key ? 'border-[#00d8ff] border-2' : ''} group `}
                                                                 >
-                                                                    <span>
+                                                                    <span 
+                                                                    className={`${(key==getOptionValue[key]) ?'text-[#6290C0]':''}`}
+                                                                    >
+                                                             
                                                                         {
                                                                             // com == 1 ? 'All Jobs' : com == 2 ? 'Data Access' : 'Chat Conversations'
+                                                                            
                                                                             getOptionValue[key]
                                                                             // getOptionValue[key + ' option'].toString()
                                                                             // getOptionValue['Workplace option'][1]
@@ -489,7 +492,10 @@ const NotificationCom = ({ setRenderComponent, src, page, setHeading, AppliedJob
                                                                                 }
                                                                                 className={`bg-[#0D0D19] text-white h-[40px] w-full px-[12px] rounded-[8px] flex items-center  hover:border-2 active:bg-[#00d8ff] active:text-black   hover:border-[#00d8ff] focus:outline-none  justify-between ${showOption == key ? 'border-[#00d8ff] border-2' : ''} group `}
                                                                             >
-                                                                                <span>
+                                                                                <span
+                                                                                  className={`${(key==getOptionValue[key]) ?'text-[#6290C0]':''}`}
+                                                                                
+                                                                                >
                                                                                     {
                                                                                         // com == 1 ? 'All Jobs' : com == 2 ? 'Data Access' : 'Chat Conversations'
                                                                                         getOptionValue[key]

@@ -11,30 +11,30 @@ import { FaSearch } from 'react-icons/fa';
 const allLogs = [
     {
         accountId: '#A0000000959',
-        date:'21 Jan 2023',
-        time:'16:44',
-        events:'/home',
-      
+        date: '21 Jan 2023',
+        time: '16:44',
+        events: '/home',
+
     },
     {
         accountId: '#A0000000959',
-        date:'21 Jan 2023',
-        time:'16:44',
-        events:'/home',
-      
+        date: '21 Jan 2023',
+        time: '16:44',
+        events: '/home',
+
     },
     {
         accountId: '#A0000000959',
-        date:'21 Jan 2023',
-        time:'16:44',
-        events:'/home',
-      
+        date: '21 Jan 2023',
+        time: '16:44',
+        events: '/home',
+
     },
-    
+
 
 ]
 const LogHistoryTable = ({ setRenderComponent, setHeading, setAppliedJobBack }) => {
-    const [data,setData]= useState([...allLogs])
+    const [data, setData] = useState([...allLogs])
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
         // setHeading('Resume')
@@ -42,19 +42,30 @@ const LogHistoryTable = ({ setRenderComponent, setHeading, setAppliedJobBack }) 
     const [isOpen, setIsOpen] = useState(false);
     const [com, setCom] = useState(1);
     let dropDownOption = [
-      'Today',
-      'Past 2 days',
-      'Past 7 days',
-      'Past 15 days',
-      'Past 30 days',
-      'Past 60 days',
-      'Past 90 days',
-      'Past 180 days',
-      'Past 365 days',
-      'Past 730 days',
-      'All time'
+        'Today',
+        'Past 2 days',
+        'Past 7 days',
+        'Past 15 days',
+        'Past 30 days',
+        'Past 60 days',
+        'Past 90 days',
+        'Past 180 days',
+        'Past 365 days',
+        'Past 730 days',
+        'All time'
 
     ]
+
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleClick = () => {
+        setIsLoading(true);
+        // Simulate a process (e.g., API call)
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 3000); // Spinner will stop after 3 seconds
+    };
     return (
         <>
             {isOpen && (
@@ -65,18 +76,23 @@ const LogHistoryTable = ({ setRenderComponent, setHeading, setAppliedJobBack }) 
                 <div className='flex justify-between text-white  text-[14px]'>
                     <div className='flex space-x-[12px]'>
 
-                    <div className='bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
-                    border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
-
-                    
-                    
-                    '  onClick={() => setRenderComponent(src)}
+                        <div
+                            className={`bg-[#1C202C] flex justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
+                  border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
+                  active:bg-[#00d8ff] active:text-black
+                 }
+                 `}
+                            onClick={() => {
+                                handleClick();
+                                // Set the component to render here (replace src with your logic)
+                                console.log("Component clicked!");
+                            }}
                         >
-                            <span className=''>
-                            <TfiReload />
+                            <span className={`${isLoading ? "animate-spin" : ""}`}>
+                                <TfiReload />
                             </span>
                         </div>
-                    <div className="relative inline-block text-left z-20">
+                        <div className="relative inline-block text-left z-20">
                             {/* Dropdown Button */}
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
@@ -120,7 +136,7 @@ const LogHistoryTable = ({ setRenderComponent, setHeading, setAppliedJobBack }) 
 
                     </div>
                     <div>
-                    <div className="relative">
+                        <div className="relative">
                             <input
                                 className="bg-[#1C202C] rounded-[8px]  px-[12px] text-white resize-none overflow-hidden h-auto min-h-[40px] placeholder:text-[#6290c0] placeholder:opacity-90  w-[350px]"
                                 // onChange={(e) => searchTextMethod(e.target.value)}
@@ -128,7 +144,7 @@ const LogHistoryTable = ({ setRenderComponent, setHeading, setAppliedJobBack }) 
                             />
                             <FaSearch className="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-[#6290c0]" />
                         </div>
-                     
+
                     </div>
 
 
@@ -146,21 +162,21 @@ const LogHistoryTable = ({ setRenderComponent, setHeading, setAppliedJobBack }) 
         </>
     )
 }
-const LogHTable = ({ setRenderComponent,setAppliedJobBack,data }) => {
- 
+const LogHTable = ({ setRenderComponent, setAppliedJobBack, data }) => {
+
     return (
         <div className="overflow-auto">
             <table className=" w-full bg-[#1C202C] rounded-lg border border-[#2A2F41]">
                 <thead>
                     <tr className="h-[40px]">
-                      
-                      
+
+
                         <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-[200px]">Date</th>
                         <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-[200px]">Time</th>
                         <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff] w-[200px]">Account ID</th>
-                      
+
                         <th className="px-[12px] text-[#FFE683] border-r border-b-[2px] border-[#2A2F41] border-b-[#ffffff] border-r-[#ffffff]">Events</th>
-                      
+
                     </tr>
                 </thead>
 
@@ -169,28 +185,28 @@ const LogHTable = ({ setRenderComponent,setAppliedJobBack,data }) => {
                         let color = i % 2 === 0 ? 'bg-[#161923]' : 'bg-[#1C202C]';
                         return (
                             <tr key={i} className={`${color} h-[40px]`}>
-                            <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.date}</td>
-                            <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.time}</td>
-                            
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.date}</td>
+                                <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.time}</td>
+
                                 <td
-                                className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]"
-                                    // className="px-[12px] text-center border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer border-r-[#ffffff]"
-                                    // onClick={() => {
-                                    //     if (setAppliedJobBack) {
+                                    className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]"
+                                // className="px-[12px] text-center border-r border-b border-[#2A2F41] hover:text-[#87ceeb] active:text-[#00d8ff] cursor-pointer border-r-[#ffffff]"
+                                // onClick={() => {
+                                //     if (setAppliedJobBack) {
 
 
-                                    //         setAppliedJobBack(0)
-                                    //     }
-                                    //     setRenderComponent(3)
+                                //         setAppliedJobBack(0)
+                                //     }
+                                //     setRenderComponent(3)
 
-                                    // }}
+                                // }}
                                 >
                                     {ele.accountId}
                                 </td>
-                              
-                            
+
+
                                 <td className="px-[12px] text-center  border-b border-[#2A2F41] ">{ele.events}</td>
-                               
+
                             </tr>
                         );
                     })}
