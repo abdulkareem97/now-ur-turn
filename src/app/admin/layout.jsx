@@ -32,6 +32,8 @@ const primarySidebarLinks = [
 export default function Layout({ children }) {
     const pathname = usePathname();
     const [selected, setSelected] = useState('');
+
+    
     // console.log(selected)
     // console.log('pathname ',pathname)
 

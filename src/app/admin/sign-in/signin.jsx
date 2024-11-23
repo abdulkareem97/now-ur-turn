@@ -9,7 +9,7 @@ function Signin({setRenderComponent,setHeading}) {
   
 
   return (
-    <div className='bg-[#03030c]'>
+    <div className=''>
     <div className="flex items-center justify h-[50vh] w-[80vw] ">
       <div className="mx-auto w-[400px]">
      

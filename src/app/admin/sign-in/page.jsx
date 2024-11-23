@@ -6,7 +6,7 @@ import Dashboard from "./Dashboard";
 
 
 function Page() {
-  const [renderComponent, setRenderComponent] = useState(1);
+  const [renderComponent, setRenderComponent] = useState(3);
   const [heading, setHeading] = useState("Sign In");
 
 
@@ -36,8 +36,24 @@ function Page() {
 
   return (
     <>
-      <main
-        className={`w-full py-[40px] bg-[#0D0D19] ${
+       <main className={`w-full py-[40px] bg-[#0D0D19] ${renderComponent==2 ? 'h-[calc(100vh-50px)] overflow-y-auto' : ''}`}>
+                      
+                   
+                      <h1 className="text-[#FFE683] text-[16px] text-center font-semibold" style={{ color: "#ffe683" }}>
+                        {heading}
+                      </h1>
+                      <div className="content px-[40px] mt-[60px] ">
+                      {
+                        renderCurrentComponent()
+                      }
+                
+                       
+                
+                       
+                      </div>
+                      </main>
+      {/* <main
+        className={`w-full py-[40px]  ${
           renderComponent === 2 ? "h-[calc(100vh-50px)] overflow-y-auto" : ""
         }`}
       >
@@ -49,7 +65,7 @@ function Page() {
         </h1>
 
         <div className="content px-[40px] mt-[60px]">{renderCurrentComponent()}</div>
-      </main>
+      </main> */}
     </>
   );
 }
