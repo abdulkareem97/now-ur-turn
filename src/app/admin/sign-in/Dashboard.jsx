@@ -85,7 +85,7 @@ const Dashboard = ({ setHeading }) => {
 
               return (
 
-                <div className='w-[100px]'>
+                <div className='w-[100px]' key={key}>
                   <div className={`relative inline-block text-left ${showOption == key ? 'z-20' : ''} w-full`}>
                     {/* Dropdown Button */}
                     <button

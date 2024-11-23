@@ -206,7 +206,7 @@ if (disPer=='Discount Percentage' || usaType=='Usability Type' || val=='Validity
 
                                 return (
 
-                                    <div className='w-[24%]'>
+                                    <div className='w-[24%]' key={key}>
                                         <div className={`relative inline-block text-left ${showOption == key ? 'z-20' : ''} w-full`}>
                                             {/* Dropdown Button */}
                                             <button
