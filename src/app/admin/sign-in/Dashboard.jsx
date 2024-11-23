@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import DropDownSvg from "../components/DropDownSvg";
 import { TfiReload } from "react-icons/tfi";
@@ -172,7 +173,7 @@ const Dashboard = ({ setHeading }) => {
         </div>
         <div className="w-[300px] h-[80vh] overflow-y-auto">
           {array.map((data, i) => (
-            <div className=" w-full mb-[6px] px-[12px] font-semibold ">
+            <div className=" w-full mb-[6px] px-[12px] font-semibold " key={i}>
               <button className={`p-[12px] w-full ${i == 0 ? "bg-[white] text-black" : "bg-[#1c202c] text-white"} rounded-[8px]`}>{data}</button>
             </div>
 

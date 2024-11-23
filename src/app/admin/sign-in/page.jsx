@@ -6,7 +6,7 @@ import Dashboard from "./Dashboard";
 
 
 function Page() {
-  const [renderComponent, setRenderComponent] = useState(3);
+  const [renderComponent, setRenderComponent] = useState(1);
   const [heading, setHeading] = useState("Sign In");
 
 
