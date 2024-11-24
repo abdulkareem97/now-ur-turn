@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import DropDownSvg from "../components/DropDownSvg";
 import { TfiReload } from "react-icons/tfi";
+import BarChart from "./BarChart";
+import Sidebar from "./Sidebar";
 
 
 const dataOption = {
@@ -10,24 +12,87 @@ const dataOption = {
   'Date': '',
 }
 
+ const formatNumber = (num) => {
+  return num.toString().padStart(2, "0"); // Pads single-digit hours with a leading zero
+};
+
+ export const minimizeNumber = (value) => {
+  if (value >= 1000000) {
+    return parseInt(value / 1000000) + "M"; // For millions
+  } else if (value >= 1000) {
+    return parseInt(value / 1000) + "K"; // For thousands
+  } else {
+    return value.toString(); // For values less than 1000
+  }
+};
+
+ const generateChartData = () => {
+  const chart_data = [];
+
+  for (let i = 0; i < 24; i++) {
+    chart_data.push({
+      hours: formatNumber(i),
+      users: Math.floor(Math.random() * 5000),
+    });
+  }
+  return chart_data;
+};
+
+
 
 const Dashboard = ({ setHeading }) => {
+  const chartData = generateChartData();
   setHeading("Dashboard")
   const hours = Array.from({ length: 24 }, (_, i) => i + 1);
   const array = ['Active Users', 'New Sign-Up', 'Courses', 'Contributors Community', 'Discuss', 'Challenges', 'Jobs', 'Projects', 'My Profile', 'Pro Benifits', 'Notification', 'Online Interships', 'Certifications', 'Wallet', 'Help Center', 'Report Issues']
 
   const [data1, setData1] = useState(dataOption)
-  const dropdownYear = [
-    '2025',
-    '2026'
-  ]
+  const dropdownYear =[2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030]
   const dropdownMonth = [
-    'June',
-    'July'
-  ]
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   const dropdownDate = [
-    '2',
-    '3'
+    formatNumber(1),
+    formatNumber(2),
+    formatNumber(3),
+    formatNumber(4),
+    formatNumber(5),
+    formatNumber(6),
+    formatNumber(7),
+    formatNumber(8),
+    formatNumber(9),
+    formatNumber(10),
+    formatNumber(11),
+    formatNumber(12),
+    formatNumber(13),
+    formatNumber(14),
+    formatNumber(15),
+    formatNumber(16),
+    formatNumber(17),
+    formatNumber(18),
+    formatNumber(19),
+    formatNumber(20),
+    formatNumber(21),
+    formatNumber(22),
+    formatNumber(23),
+    formatNumber(24),
+    formatNumber(25),
+    formatNumber(26),
+    formatNumber(27),
+    formatNumber(28),
+    formatNumber(29),
+    formatNumber(30),
   ]
   const [year, setYear] = useState('Year')
   const [month, setMonth] = useState('Month')
@@ -49,11 +114,11 @@ const Dashboard = ({ setHeading }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
-      setIsLoading(true);
-      // Simulate a process (e.g., API call)
-      setTimeout(() => {
-          setIsLoading(false);
-      }, 3000); // Spinner will stop after 3 seconds
+    setIsLoading(true);
+    // Simulate a process (e.g., API call)
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Spinner will stop after 3 seconds
   };
 
   return (
@@ -64,22 +129,22 @@ const Dashboard = ({ setHeading }) => {
 
       <div className="relative mb-[12px]">
         <div className='flex space-x-[12px] text-white  text-[14px]'>
-        <div
-                            className={`bg-[#1C202C] flex justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
+          <div
+            className={`bg-[#1C202C] flex justify-center items-center text-xl rounded-[8px] h-[40px] w-[40px] 
                   border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]
                   active:bg-[#00d8ff] active:text-black
                  }
                  `}
-                            onClick={() => {
-                                handleClick();
-                                // Set the component to render here (replace src with your logic)
-                                console.log("Component clicked!");
-                            }}
-                        >
-                            <span className={`${isLoading ? "animate-spin" : ""}`}>
-                                <TfiReload />
-                            </span>
-                        </div>
+            onClick={() => {
+              handleClick();
+              // Set the component to render here (replace src with your logic)
+              console.log("Component clicked!");
+            }}
+          >
+            <span className={`${isLoading ? "animate-spin" : ""}`}>
+              <TfiReload />
+            </span>
+          </div>
           {
             Object.entries(data1).map(([key, value], ind) => {
 
@@ -117,7 +182,7 @@ const Dashboard = ({ setHeading }) => {
 
                     {/* Dropdown Menu */}
                     {showOption == key && (
-                      <div className="absolute z-30 mt-[12px] w-full bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700">
+                      <div className={`absolute z-30 mt-[12px] w-full bg-[#1C202C] text-white rounded-[8px] shadow-lg border-2 border-gray-700 ${key=='Date' ? 'h-[70vh] overflow-auto' : ''}`}>
                         <ul className="py-1">
                           {
 
@@ -144,8 +209,14 @@ const Dashboard = ({ setHeading }) => {
             )}
         </div>
       </div>
-      <div className="flex gap-[12px]">
-        <div >
+      <div className="">
+
+        <div className="overflow-auto text-white flex space-x-[12px]">
+          {/* <h1 className="text-center text-2xl font-bold pt-8">Bar Chart Example</h1> */}
+          <BarChart data={chartData} />
+          <Sidebar />
+        </div>
+        {/* <div >
           <div className="flex w-[68vw] h-[80vh] ">
             {hours.map((hour) => (
               <div
@@ -179,7 +250,7 @@ const Dashboard = ({ setHeading }) => {
 
           ))}
 
-        </div>
+        </div> */}
       </div>
 
     </>
