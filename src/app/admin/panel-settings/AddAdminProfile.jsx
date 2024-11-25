@@ -99,7 +99,7 @@ function AddAdminProfile({ setHeading, profiles, setProfiles,setRenderComponent 
     </div>
     <div className="w-fit mx-auto mt-[40px] space-y-[12px]">
         <div
-          className={` ${newProfile.password.length>=1? 'bg-[#1C202C]':'bg-[#6290c0]'} text-center h-[35px] font-semibold flex justify-center rounded-[8px] w-[480px] hover:border-[2px] border-[#00d8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black`}
+          className={` ${newProfile.password.length>=1? 'bg-[#1C202C] hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black  rounded-[8px] font-semibold ':'bg-[#6290c0]'} text-center h-[35px] font-semibold flex justify-center rounded-[8px] w-[480px] active:bg-[#00d8ff] active:text-black`}
         >
           <button className="w-full" onClick={handleSave}>
             Save
