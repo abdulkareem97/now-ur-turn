@@ -4,6 +4,8 @@ function EditCredential({ setHeading, setRenderComponent, editProfile, profiles,
   // Set the heading for the page
   setHeading("Edit Credential");
 
+  const[disabled,setDisabled]=useState(true)
+
   // Titles for mapping labels to keys
   const profTitle = {
     firstName: "First Name",
@@ -27,11 +29,14 @@ function EditCredential({ setHeading, setRenderComponent, editProfile, profiles,
 
   // Handle input changes and update the profile state
   const handleChange = (key, newValue) => {
+
     setProfile((prevProfile) =>
       prevProfile.map((field) =>
         field.key === key ? { ...field, value: newValue } : field
       )
     );
+    setDisabled(false)
+
   };
 
   // Handle save changes
@@ -41,6 +46,7 @@ function EditCredential({ setHeading, setRenderComponent, editProfile, profiles,
       acc[field.key] = field.value;
       return acc;
     }, {});
+
   
     // Map the updated profile to the required format
     const formattedProfile = Object.entries(updatedProfile).map(([key, value]) => ({
@@ -63,11 +69,14 @@ function EditCredential({ setHeading, setRenderComponent, editProfile, profiles,
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center pt-[px] w-fit mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[8px] p-[12px] space-y-[12px]">
+      <div className="bg-[#1C202C] w-[700px] flex flex-col justify-center items-center pt-[px]  mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[8px] p-[12px] space-y-[12px]">
         {/* Render input fields for each profile attribute */}
-        {profile.map((ele) => (
+        {profile.map((ele) => { 
+          if(ele.label=="Password") return
+           
+          return(
           <div key={ele.key} className="w-full">
-            <div className="w-full space-x-[32px] bg-[#03030c] rounded-[8px]">
+            <div className="w-full space-x-[32px] bg-[#0D0D19] rounded-[8px]">
               <label
                 htmlFor={ele.key}
                 className="text-[#FFE683] w-[144px] inline-block px-[12px]"
@@ -86,20 +95,20 @@ function EditCredential({ setHeading, setRenderComponent, editProfile, profiles,
               />
             </div>
           </div>
-        ))}
+        )})}
       </div>
       {/* Save and Cancel buttons */}
       <div className="w-fit mx-auto mt-[40px]">
-        <div className="text-center h-[35px] flex justify-center rounded-[8px] w-[480px]">
-          <button
-            className="bg-[#6290c0] w-full rounded-[8px] font-semibold"
+        <div className="text-center h-[40px] flex justify-center rounded-[8px] w-[700px]">
+          <button disabled={disabled}
+            className={ !disabled ? `bg-[#1C202C] hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-full rounded-[8px] font-semibold`:` bg-[#6290c0] w-full rounded-[8px] font-semibold`}
             onClick={handleSaveChanges}
           >
             Save Changes
           </button>
         </div>
         <div
-          className="text-center my-[12px] h-[35px] flex justify-center font-semibold bg-[#03030c] rounded-[8px] hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black"
+          className="text-center my-[12px] h-[40px] flex justify-center font-semibold bg-[#1C202C] rounded-[8px] hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black"
           onClick={() => setRenderComponent(1)}
         >
           <button>Cancel</button>

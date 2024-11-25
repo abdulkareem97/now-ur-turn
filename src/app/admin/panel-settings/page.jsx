@@ -6,6 +6,7 @@ import EditCredential from "./EditCredential";
 import ChangePasssword from "./ChangePasssword";
 import VerificationPage from "./Verification";
 import ForgetPassword from "./ForgetPassword";
+import VerificationDeleteAdmin from "./VerificationDeleteAdmin ";
 
 function Page() {
   const [renderComponent, setRenderComponent] = useState(1);
@@ -20,14 +21,12 @@ function Page() {
       lastName: "Cartel",
       loginId: "ejhfseghefsgjfhdj",
       emailAddress: "johncartel@email.com",
-      password: "sdhfgjshj",
     },
     {
       firstName: "Jane",
       lastName: "Doe",
       loginId: "jd123456",
       emailAddress: "janedoe@email.com",
-      password: "janepass123",
     },
 
   ];
@@ -106,6 +105,13 @@ function Page() {
             setVerify={setVerify}
           />
         );
+        case 9:
+          return (
+            <VerificationDeleteAdmin
+              setHeading={setHeading}
+              setRenderComponent={setRenderComponent}
+            />
+          );
       default:
         return null;
     }

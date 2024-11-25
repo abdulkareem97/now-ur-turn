@@ -196,7 +196,7 @@ if (disPer=='Discount Percentage' || usaType=='Usability Type' || val=='Validity
 
             <div className="relative">
                 <div className='flex justify-between text-white  text-[14px]'>
-                    <div className='bg-[#1C202C] flex p-[12px] w-full space-x-[40px] rounded-[16px]'>
+                    <div className='bg-[#1C202C] flex p-[40px] w-full space-x-[40px] rounded-[16px] border-[#2a2f41] border-[2px]'>
 
 
                         {/*  */}
@@ -206,7 +206,7 @@ if (disPer=='Discount Percentage' || usaType=='Usability Type' || val=='Validity
 
                                 return (
 
-                                    <div className='w-[24%]' key={key}>
+                                    <div className='w-full' key={key}>
                                         <div className={`relative inline-block text-left ${showOption == key ? 'z-20' : ''} w-full`}>
                                             {/* Dropdown Button */}
                                             <button
@@ -267,7 +267,7 @@ if (disPer=='Discount Percentage' || usaType=='Usability Type' || val=='Validity
 
                         {/*  */}
                      
-                                <div className='w-[24%]'> 
+                                <div className='w-full'> 
                                     <button className={` bg-[#2a2f41]  justify-center items-center text-xl rounded-[8px] h-[40px] w-full border-[2px] border-[#1C202C]  ${isPost ? ' flex  active:bg-[#00d8ff] active:text-black hover:border-[#00d8ff] hover:text-[#00d8ff]' : 'bg-[#6290c0]'} `}
                                         onClick={() => {
                                             if (isPost) {

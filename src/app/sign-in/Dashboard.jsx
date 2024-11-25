@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import DropDownSvg from "../components/DropDownSvg";
+import DropDownSvg from "../admin/components/DropDownSvg";
 import { TfiReload } from "react-icons/tfi";
 import BarChart from "./BarChart";
 import Sidebar from "./Sidebar";
@@ -211,7 +211,7 @@ const Dashboard = ({ setHeading }) => {
       </div>
       <div className="">
 
-        <div className="overflow-auto text-white flex space-x-[12px]">
+        <div className="overflow-auto text-white flex justify-evenly space-x-[12px]">
           {/* <h1 className="text-center text-2xl font-bold pt-8">Bar Chart Example</h1> */}
           <BarChart data={chartData} />
           <Sidebar />
@@ -221,7 +221,7 @@ const Dashboard = ({ setHeading }) => {
             {hours.map((hour) => (
               <div
                 key={hour}
-                className={`flex-1 flex justify-center items-center text-white ${hour % 2 === 0 ? "bg-[#03030c]" : "bg-[#1c202c]"
+                className={`flex-1 flex justify-center items-center text-white ${hour % 2 === 0 ? "bg-[#1C202C]" : "bg-[#1c202c]"
                   }`}
               >
               </div>

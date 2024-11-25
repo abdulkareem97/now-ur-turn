@@ -73,7 +73,7 @@ function AddAdminProfile({ setHeading, profiles, setProfiles,setRenderComponent 
 
       {Object.entries(profTitle).map(([key, label]) => (
         <div key={key} className="w-full">
-          <div className="w-full space-x-[12px] bg-[#03030c] rounded-[8px] flex items-center">
+          <div className="w-full space-x-[12px] bg-[#1C202C] rounded-[8px] flex items-center">
             <label
               htmlFor={key}
               className="text-[#FFE683] w-[144px] inline-block px-[12px]"
@@ -99,13 +99,13 @@ function AddAdminProfile({ setHeading, profiles, setProfiles,setRenderComponent 
     </div>
     <div className="w-fit mx-auto mt-[40px] space-y-[12px]">
         <div
-          className={` ${newProfile.password.length>=1? 'bg-[#03030c]':'bg-[#6290c0]'} text-center h-[35px] font-semibold flex justify-center rounded-[8px] w-[480px] hover:border-[2px] border-[#00d8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black`}
+          className={` ${newProfile.password.length>=1? 'bg-[#1C202C]':'bg-[#6290c0]'} text-center h-[35px] font-semibold flex justify-center rounded-[8px] w-[480px] hover:border-[2px] border-[#00d8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black`}
         >
           <button className="w-full" onClick={handleSave}>
             Save
           </button>
         </div>
-        <div className="text-center font-semibold my-[12px] h-[35px] flex justify-center bg-[#03030c] rounded-[8px] hover:bg-[#6290c0]">
+        <div className="text-center font-semibold my-[12px] h-[35px] flex justify-center bg-[#1C202C] rounded-[8px] hover:bg-[#6290c0]">
           <button onClick={handleCancel}>Cancel</button>
         </div>
       </div>

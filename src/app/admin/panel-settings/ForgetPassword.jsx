@@ -7,10 +7,28 @@ function ForgetPassword({setHeading,setRenderComponent}) {
         sNP:''
 
     })
+    const[disabled,setDisabled]=useState(true)
+
 
     const handleChange=(e)=>{
         const{name,value}=e.target
         setNewPassword((prev)=>({...prev,[name]:value}))
+        newPassword[name]=value
+
+        let mt=true
+        Object.values(newPassword).map((ele)=>{
+          if(ele.length===0){
+            mt=false
+          }
+        })
+
+        if(mt){
+          setDisabled(false)
+
+
+        }else{
+          setDisabled(true)
+        }
     }
 
     const handleClick=()=>{
@@ -23,7 +41,7 @@ function ForgetPassword({setHeading,setRenderComponent}) {
    
   return (
     <>
-    <div className="flex flex-col justify-center items-center w-fit mx-auto border-[2px] border-gray-800 rounded-[8px] p-[12x] ">
+    <div className="flex flex-col justify-center items-center w-[700px] mx-auto border-[2px] border-gray-800 rounded-[16px] p-[12x] bg-[#1C202C] ">
             
                
     
@@ -41,7 +59,7 @@ function ForgetPassword({setHeading,setRenderComponent}) {
                     onChange={handleChange}
 
                     placeholder="Enter your new password"
-                    className=" placeholder:text-[#6290c0] w-[400px] mt-[6px]  p-[12px] rounded-[8px] outline-none bg-[#03030c] "
+                    className=" placeholder:text-[#6290c0] w-full mt-[6px]  p-[12px] rounded-[8px] outline-none bg-[#0D0D19]  "
                    
                   />
                 </div>
@@ -53,15 +71,15 @@ function ForgetPassword({setHeading,setRenderComponent}) {
                     value={newPassword.sNP}
                     onChange={handleChange}
                     placeholder="Re-enter your new password"
-                    className=" placeholder:text-[#6290c0] w-[400px]  p-[12px] rounded-[8px] outline-none bg-[#03030c] "
+                    className=" placeholder:text-[#6290c0] w-full p-[12px] rounded-[8px] outline-none bg-[#0D0D19] "
                    
                   />
                 </div>
              
           </div> 
-          <div className={`mx-auto text-centera font-semibold rounded-[8px] p-[12px] mt-[36px] w-[400px] hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black`} onClick={handleClick}><button>Save Password</button></div>
+          <div className='flex justify-center'><button disabled={disabled} className={disabled?' mx-auto text-center bg-[#6290c0]  rounded-[8px] p-[12px] font-semibold mt-[36px] w-[700px] ':'bg-[#1C202C]  mx-auto text-center  p-[12px] mt-[36px]  hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-[700px] rounded-[8px] font-semibold'} onClick={handleClick}>Save Password</button></div>
 
-              <div className='mx-auto text-center bg-[#03030c] rounded-[8px] p-[12px] mt-[12px] w-[400px] font-semibold'><button>Cancel</button></div>
+              <div className='mx-auto text-center bg-[#1C202C] rounded-[8px] p-[12px] mt-[12px] w-[700px] font-semibold hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black' onClick={()=>setRenderComponent(7)}><button>Cancel</button></div>
     
        
           </>

@@ -58,6 +58,8 @@ const BarChart = ({ data }) => {
             barThickness: 25,
             backgroundColor: "#fffd8c",
             hoverBackgroundColor: "#ffc800",
+            borderColor: "yellow", 
+            borderWidth: 2,             
           },
         ],
       };
@@ -86,7 +88,7 @@ const BarChart = ({ data }) => {
       };
 
       new Chart(ctx, {
-        type: "bar",
+        type: "line",
         data: chartData,
         options,
       });
@@ -102,7 +104,7 @@ const BarChart = ({ data }) => {
   }, [data]);
 
   return (
-    <div className="mx-4 w-[70vw]">
+    <div className=" w-[70vw]">
       <canvas id="chart" ref={chartRef}></canvas>
     </div>
   );

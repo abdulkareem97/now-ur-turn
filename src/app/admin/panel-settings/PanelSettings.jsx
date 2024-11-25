@@ -27,6 +27,8 @@ const PanelSettings = ({ setRenderComponent, src, page, setHeading, AppliedJobBa
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top of the page
         // setHeading('#A00000369')
+        setHeading('Panel Setting')
+
     }, []);
     const [showOption, setShowOption] = useState('')
     const [audienceType, setAudienceType] = useState('Audience type')
@@ -383,11 +385,15 @@ const PanelSettings = ({ setRenderComponent, src, page, setHeading, AppliedJobBa
 
 
                 </div>
-                <div className='flex flex-wrap justify-evenly gap-[12px]'>
+                <div className='flex space-x-[40px]'>
                     {profiles.map((profile, index) => (
-                        <div key={index} className="bg-[#1C202C] border-2 border-gray-700 rounded-[16px] overflow-auto pb-[12px] mt-[20px]">
+                        <div key={index} className="bg-[#1C202C] border-[2px] border-gray-700 rounded-[16px] w-[50%] overflow-auto pb-[12px] mt-[20px]">
                             <div className="flex flex-col space-y-[12px] w-full px-[12px]">
-                                {Array.isArray(profile) && profile.map((ele, i) => (
+                                {Array.isArray(profile) && profile.map((ele, i) =>{
+                                    if(ele.label=="Password") return
+                                     return(
+
+                                    
                                     <div key={i} className='bg-[#0D0D19] flex px-[12px] h-[40px] items-center rounded-[8px] w-full mt-[12px]'>
                                         <span className="text-[#FFE683]  w-[110px]">
                                             {ele.label}
@@ -395,18 +401,19 @@ const PanelSettings = ({ setRenderComponent, src, page, setHeading, AppliedJobBa
                                         <span className='px-[6px]'>:</span>
                                         <span>{ele.value}</span>
                                     </div>
-                                ))}
+                                
+                                )})}
                                 {/* Buttons for Edit/Delete */}
-                                <div className='flex'>
+                                <div className='flex justify-between'>
                                     {/* Delete Profile */}
-                                    <div className='flex justify-between text-white text-[14px]'>
+                                    <div className=' text-white text-[14px]'>
                                         <div>
                                             <div className='bg-[#161923] flex active:bg-[#00d8ff] active:text-black justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]'
                                                 onClick={() => {
                                                     const updatedProfiles = [...profiles];
                                                     updatedProfiles.splice(index, 1);
                                                     setProfiles(updatedProfiles);
-                                                    setRenderComponent(7);
+                                                    setRenderComponent(9);
                                                     setVerify(1)
                                                 }}
                                             >
@@ -419,7 +426,7 @@ const PanelSettings = ({ setRenderComponent, src, page, setHeading, AppliedJobBa
                                     {/* Edit Profile */}
                                     <div className='flex justify-between text-white text-[14px]'>
                                         <div>
-                                            <div className='bg-[#161923] mx-[12px] flex active:bg-[#00d8ff] active:text-black justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]'
+                                            <div className='bg-[#161923] mx-[12px]  flex active:bg-[#00d8ff] active:text-black justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]'
                                                 onClick={() => {
                                                     console.log(`Edit credentials for profile: ${index}`)
                                                     setRenderComponent(5);
@@ -436,7 +443,7 @@ const PanelSettings = ({ setRenderComponent, src, page, setHeading, AppliedJobBa
                                     </div>
                                     <div className='flex justify-between text-white text-[14px]'>
                                         <div>
-                                            <div className='bg-[#161923] mx-[12px] flex active:bg-[#00d8ff] active:text-black justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]'
+                                            <div className='bg-[#161923]  flex active:bg-[#00d8ff] active:text-black justify-center items-center text-xl rounded-[8px] h-[40px] w-[200px] border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]'
                                                 onClick={() => {
                                                     console.log(`Edit credentials for profile: ${index}`)
                                                     setRenderComponent(4);

@@ -1,6 +1,7 @@
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
-const VerificationPage = ({setHeading,setRenderComponent,renderComponent,verify}) => {
+const VerificationPage = ({setHeading,setRenderComponent}) => {
   setHeading('Enter Verifcation Code')
   const [otp, setOtp] = useState(["", "", "", "", "",""]);
   const [resendTimer, setResendTimer] = useState(30);
@@ -20,7 +21,6 @@ const VerificationPage = ({setHeading,setRenderComponent,renderComponent,verify}
     }
   };
 
-  // Handle backspace key to move focus
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && otp[index] === "") {
       if (index > 0) {
@@ -39,32 +39,11 @@ const VerificationPage = ({setHeading,setRenderComponent,renderComponent,verify}
     }
   }, [resendTimer]);
 
-  // Handle Resend Code
-  const handleResend = () => {
-    setResendTimer(30);
-    setIsResendDisabled(true);
-    // Add resend logic here
-    console.log("Resend code!");
-  };
 
-  // Verify Code
-  const handleVerify = () => {
-    console.log("Entered OTP:", otp.join(""));
-    console.log(renderComponent,verify)
-    if(verify==1){
-      setRenderComponent(1)
-      setHeading('Panel Setting')
 
-      return
-
-    }else{
-    setRenderComponent(8)
-    }
-    // Add verify logic here
-  };
 
   return (
-    <div className="flex items-center justify-center h-[40vh] w-[700px] mx-auto text-white">
+    <div className="flex items-center justify-center h-[40vh]  text-white">
   <div className="flex flex-col items-centr ">
     <div className="flex gap-[12px] mb-[12px] justify-center ">
       {otp.map((digit, index) => (
@@ -82,16 +61,14 @@ const VerificationPage = ({setHeading,setRenderComponent,renderComponent,verify}
     </div>
 
     <button
-      onClick={handleVerify} 
-      disabled={!(otp[otp.length-1]!="" || verify==1 )}
-
-      className={`py-[12px] mb-[12px] mt-[40px] w-[700px] bg-[#1C202C] font-bold text-lg rounded-[8px] text-white  ${otp[otp.length-1]!="" || verify==1 ? 'hover:text-[#00d8ff] hover:border-2  border-[#00D8ff] active:bg-[#00d8ff] active:text-black' : ' bg-[#6290c0]' }`}
+    disabled={otp[otp.length-1]===""}
+    className={`py-[12px] mb-[12px] mt-[40px] w-[700px] bg-[#1C202C] font-bold text-lg rounded-[8px] text-white  ${otp[otp.length-1]!="" ? 'hover:text-[#00d8ff] hover:border-2  border-[#00D8ff] active:bg-[#00d8ff] active:text-black' : ' bg-[#6290c0]' }`}
     >
-      Verify
+      {otp[otp.length-1]!="" ? <Link  href='/admin'>Verify</Link>:'Verify'}
+      
     </button>
 
     <button
-      onClick={handleResend}
       className='w-[700px] py-[12px] bg-[#6290c0] text-white  rounded-[8px] font-semibold  
 '
     >

@@ -18,65 +18,70 @@ const main_sidebar_links = [
     //   data: generateChartData(),
     },
     {
-      id: 4,
+      id:4,
+      title:'Contributors Community'
+    },
+    {
+      id: 5,
       title: "Discuss",
     //   data: generateChartData(),
     },
     {
-      id: 5,
-      title: "Challenge",
-    //   data: generateChartData(),
-    },
-    {
       id: 6,
-      title: "Jobs",
+      title: "Challenges",
     //   data: generateChartData(),
     },
     {
       id: 7,
-      title: "Projects",
+      title: "Jobs",
     //   data: generateChartData(),
     },
     {
       id: 8,
-      title: "My Profile",
+      title: "Projects",
     //   data: generateChartData(),
     },
     {
       id: 9,
-      title: "Pro Benefits",
+      title: "My Profile",
     //   data: generateChartData(),
     },
     {
       id: 10,
-      title: "Notifications",
+      title: "Pro Benefits",
     //   data: generateChartData(),
     },
     {
       id: 11,
-      title: "Online Internships",
+      title: "Notifications",
     //   data: generateChartData(),
     },
     {
       id: 12,
-      title: "Certifications",
+      title: "Online Internships",
     //   data: generateChartData(),
     },
     {
       id: 13,
-      title: "Wallet",
+      title: "Certifications",
     //   data: generateChartData(),
     },
     {
       id: 14,
-      title: "Help Center",
+      title: "Wallet",
     //   data: generateChartData(),
     },
     {
       id: 15,
+      title: "Help Center",
+    //   data: generateChartData(),
+    },
+    {
+      id: 16,
       title: "Report Issues",
     //   data: generateChartData(),
     },
+
   ];
 
 
@@ -89,12 +94,12 @@ const Sidebar = () => {
   };
 
   return (
-    <aside id="ms" className=" space-y-[12px] overflow-auto h-[70vh]">
+    <aside id="ms" className=" space-y-[8px] overflow-auto font-semibold  ">
       {main_sidebar_links.map((spec) => (
         <button
           key={spec.id}
           onClick={() => handleSidebarClick(spec)}
-          className={`bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[230px] 
+          className={`bg-[#1C202C] flex active:bg-[#00d8ff] active:text-black  justify-center items-center text-xl rounded-[8px] h-[40px] w-[320px] 
                     border-[2px] border-[#1C202C] hover:border-[#00d8ff] hover:text-[#00d8ff]  ${
             selectedSpec.id === spec.id ? "bg-white text-black" : "bg-gray-800 text-white"
           }`}
