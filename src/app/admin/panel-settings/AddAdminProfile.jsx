@@ -70,7 +70,7 @@ function AddAdminProfile({ setHeading, profiles, setProfiles,setRenderComponent 
 
   return (
     <>
-    <div className="bg-[#1C202C] flex flex-col items-center pt-[12px] mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[8px] p-[12px] space-y-[12px] w-[700px]">
+    <div className="bg-[#1C202C] flex flex-col items-center pt-[12px] mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[16px] p-[12px] space-y-[12px] w-[700px]">
 
       {Object.entries(profTitle).map(([key, label]) => (
         <div key={key} className="w-full">
