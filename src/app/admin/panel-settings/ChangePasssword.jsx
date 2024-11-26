@@ -52,7 +52,7 @@ function ChangePasssword({setHeading,setRenderComponent}) {
     }));
   return (
     <>
-<div className="bg-[#1C202C] flex flex-col justify-center items-center w-[700px] mx-auto border-[2px] border-[#2a2f41]  rounded-[8px] p-[12px] ">
+<div className="bg-[#1C202C] flex flex-col justify-center items-center w-[700px] mx-auto border-[2px] border-[#2a2f41]  rounded-[16px] p-[12px] ">
         
           <div  className="w-full">
             <div className="w-full  rounded-[8px]">
