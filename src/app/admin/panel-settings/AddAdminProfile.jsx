@@ -65,15 +65,16 @@ function AddAdminProfile({ setHeading, profiles, setProfiles,setRenderComponent 
       emailAddress: '',
       password: ''
     });
+    setRenderComponent(1)
   };
 
   return (
     <>
-    <div className="flex flex-col items-center pt-[12px] w-fit mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[8px] p-[12px] space-y-[12px]">
+    <div className="bg-[#1C202C] flex flex-col items-center pt-[12px] mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[8px] p-[12px] space-y-[12px] w-[700px]">
 
       {Object.entries(profTitle).map(([key, label]) => (
         <div key={key} className="w-full">
-          <div className="w-full space-x-[12px] bg-[#1C202C] rounded-[8px] flex items-center">
+          <div className="w-full space-x-[12px] bg-[#0D0D19] rounded-[8px] flex items-center">
             <label
               htmlFor={key}
               className="text-[#FFE683] w-[144px] inline-block px-[12px]"
@@ -99,14 +100,14 @@ function AddAdminProfile({ setHeading, profiles, setProfiles,setRenderComponent 
     </div>
     <div className="w-fit mx-auto mt-[40px] space-y-[12px]">
         <div
-          className={` ${newProfile.password.length>=1? 'bg-[#1C202C] hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black  rounded-[8px] font-semibold ':'bg-[#6290c0]'} text-center h-[35px] font-semibold flex justify-center rounded-[8px] w-[480px] active:bg-[#00d8ff] active:text-black`}
+          className={` ${newProfile.password.length>=1? 'bg-[#1C202C] hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black  rounded-[8px] font-semibold ':'bg-[#6290c0]'} text-center h-[40px] font-semibold flex justify-center rounded-[8px] w-[700px] `}
         >
-          <button className="w-full" onClick={handleSave}>
+          <button className="w-full" onClick={handleSave} disabled={newProfile.password.length<1}>
             Save
           </button>
         </div>
-        <div className="text-center font-semibold my-[12px] h-[35px] flex justify-center bg-[#1C202C] rounded-[8px] hover:bg-[#6290c0]">
-          <button onClick={handleCancel}>Cancel</button>
+        <div className="ttext-center my-[12px] h-[40px] flex justify-center font-semibold bg-[#1C202C] rounded-[8px] hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black">
+          <button onClick={handleCancel} className='w-full'>Cancel</button>
         </div>
       </div>
     </>

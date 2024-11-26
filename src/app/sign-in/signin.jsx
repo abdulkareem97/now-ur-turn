@@ -51,7 +51,7 @@ function Signin({setRenderComponent,setHeading}) {
               name="loginId"
               value={password.loginId}
               onChange={handleChange}
-              className="w-full h-[40px] bg-[#1C202C] text-white placeholder:text-[#6290c0] rounded-[8px] font-semibold px-[12px] py-[12px] border-[2px] border-[#2a2f41] focus:outline-none focus:ring-2 focus:ring-[#00d8ff]"
+              className="w-full h-[40px] bg-[#1C202C] text-white placeholder:text-[#6290c0] rounded-[8px]  px-[12px] py-[12px] border-[2px] border-[#2a2f41] focus:outline-none focus:ring-2 focus:ring-[#00d8ff]"
             />
           </div>
           <div className="relative">
@@ -62,7 +62,7 @@ function Signin({setRenderComponent,setHeading}) {
 
               value={password.passowrd}
               onChange={handleChange}
-              className="w-full bg-[#1C202C] h-[40px] text-white placeholder:text-[#6290c0] border-[2px] border-[#2a2f41] rounded-[8px] font-semibold px-[12px] py-[12px] mb-[12px] focus:outline-none focus:ring-2 focus:ring-[#00d8ff]"
+              className="w-full bg-[#1C202C] h-[40px] text-white placeholder:text-[#6290c0] border-[2px] border-[#2a2f41] rounded-[8px]  px-[12px] py-[12px] mb-[12px] focus:outline-none focus:ring-2 focus:ring-[#00d8ff]"
             />
             <div
               className="absolute bottom-6 right-[12px] flex items-center cursor-pointer text-[#6290c0]"
@@ -74,7 +74,7 @@ function Signin({setRenderComponent,setHeading}) {
 
           <button
           disabled={disabled}
-          className={disabled?' mx-auto text-center bg-[#6290c0] text-white  rounded-[8px] p-[12px] font-semibold mt-[36px] w-[700px] ':'bg-[#1C202C] text-white   mx-auto text-center  p-[12px] mt-[36px]  hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-[700px] rounded-[8px] font-semibold'} onClick={()=>setRenderComponent(2)} 
+          className={disabled?'h-[40px] mx-auto text-center bg-[#6290c0] text-white  rounded-[8px] px-[12px] font-semibold mt-[36px] w-[700px] ':'h-[40px] bg-[#1C202C] text-white   mx-auto text-center  px-[12px] mt-[36px]  hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-[700px] rounded-[8px] font-semibold'} onClick={()=>setRenderComponent(2)} 
           >
             Sign In
           </button>

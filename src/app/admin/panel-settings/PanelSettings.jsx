@@ -385,7 +385,7 @@ const PanelSettings = ({ setRenderComponent, src, page, setHeading, AppliedJobBa
 
 
                 </div>
-                <div className='grid grid-cols-2 justify-items-center py-[40px] gap-[40px]'>
+                <div className='grid grid-cols-2 justify-items-center py-[12px] gap-[40px]'>
                     {profiles.map((profile, index) => (
                         <div key={index} className="bg-[#1C202C] border-[2px] border-gray-700 rounded-[16px] w-[100%] overflow-auto ">
                             <div className="flex flex-col space-y-[12px] pb-[12px] w-full px-[12px]">

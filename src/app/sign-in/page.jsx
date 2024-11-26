@@ -37,7 +37,7 @@ function Page() {
 
   return (
     <>
-     <nav className="flex  bg-[#1C202C] text-white justify-start items-center h-[50px] w-screen px-[24px] z-10  ">
+     <nav className="flex w-full  bg-[#1C202C] text-white justify-start items-center h-[50px]  px-[24px] z-10  ">
                     <div className="h-10 w-10 overflow-hidden">
                         <Image
                             src="/static/assets/logo.png"

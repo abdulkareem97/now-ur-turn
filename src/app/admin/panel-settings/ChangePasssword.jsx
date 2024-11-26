@@ -110,11 +110,11 @@ function ChangePasssword({setHeading,setRenderComponent}) {
           </div>
          
       </div> 
-      <div className={disabled?' mx-auto text-center bg-[#6290c0]  rounded-[8px] p-[12px] font-semibold mt-[36px] w-[700px] ':'bg-[#1C202C]  mx-auto text-center  p-[12px] mt-[36px]  hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-[700px] rounded-[8px] font-semibold'}><button disabled={disabled} onClick={()=>setRenderComponent(1)}>Save Password</button></div>
+      <div className={disabled?' mx-auto text-center bg-[#6290c0]  rounded-[8px] p-[12px] font-semibold mt-[36px] w-[700px] h-[40px]':'bg-[#1C202C]  mx-auto text-center  p-[12px] mt-[36px]  hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-[700px] rounded-[8px] font-semibold'}><button disabled={disabled} onClick={()=>setRenderComponent(1)}>Save Password</button></div>
 
-          <div className='mx-auto text-center font-semibold bg-[#1C202C] rounded-[8px] p-[12px] mt-[12px] w-[700px] hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black' ><button onClick={()=>setRenderComponent(1)}>Cancel</button></div>
+          <div className='mx-auto text-center font-semibold bg-[#1C202C] rounded-[8px] px-[12px] mt-[12px] w-[700px] hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black h-[40px] flex justify-center' ><button onClick={()=>setRenderComponent(1)} className='w-full'>Cancel</button></div>
 
-        <div className='mx-auto text-center bg-[#1C202C] font-semibold rounded-[8px] p-[12px] mt-[36px] w-[700px] hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] '><button onClick={()=>setRenderComponent(7)} >Forget Password</button></div>
+        <div className='mx-auto text-center bg-[#1C202C] font-semibold rounded-[8px] px-[12px] mt-[36px] w-[700px] hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] h-[40px] flex justify-center'><button onClick={()=>setRenderComponent(7)} className='w-full'>Forget Password</button></div>
       </>
        )
 }

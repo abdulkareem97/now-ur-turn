@@ -77,9 +77,9 @@ function ForgetPassword({setHeading,setRenderComponent}) {
                 </div>
              
           </div> 
-          <div className='flex justify-center'><button disabled={disabled} className={disabled?' mx-auto text-center bg-[#6290c0]  rounded-[8px] p-[12px] font-semibold mt-[36px] w-[700px] ':'bg-[#1C202C]  mx-auto text-center  p-[12px] mt-[36px]  hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-[700px] rounded-[8px] font-semibold'} onClick={handleClick}>Save Password</button></div>
+          <div className=' flex justify-center'><button disabled={disabled} className={disabled?' mx-auto text-center bg-[#6290c0]  rounded-[8px] px-[12px] h-[40px] font-semibold mt-[36px] w-[700px] ':'h-[40px] bg-[#1C202C]  mx-auto text-center  px-[12px] mt-[36px]  hover:border-[2px] hover:border-[#00D8FF] hover:text-[#00D8FF] active:bg-[#00d8ff] active:text-black w-[700px] rounded-[8px] font-semibold'} onClick={handleClick}>Save Password</button></div>
 
-              <div className='mx-auto text-center bg-[#1C202C] rounded-[8px] p-[12px] mt-[12px] w-[700px] font-semibold hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black' onClick={()=>setRenderComponent(7)}><button>Cancel</button></div>
+              <div className='mx-auto text-center bg-[#1C202C] rounded-[8px] px-[12px] h-[40px] flex justify-center mt-[12px] w-[700px] font-semibold hover:border-[2px]  border-[#00D8ff] hover:text-[#00d8ff] active:bg-[#00d8ff] active:text-black' onClick={()=>setRenderComponent(4)}><button>Cancel</button></div>
     
        
           </>

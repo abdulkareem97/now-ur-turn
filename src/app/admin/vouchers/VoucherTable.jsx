@@ -156,9 +156,10 @@ if (disPer=='Discount Percentage' || usaType=='Usability Type' || val=='Validity
 
 {isAlert && (
                 <>
-                    <div className="fixed inset-0 bg-black bg-opacity-60 z-[70] flex justify-center items-center" onClick={() => { setIsOpen(false) }}>
+                    <div className="fixed inset-0 bg-black bg-opacity-60 z-[70] flex justify-center items-center" >
                     </div>
-                    <div className="fixed inset-0  z-[80] flex justify-center items-center">
+                    <div className="fixed inset-0  z-[80] flex justify-center items-center"
+                    onClick={()=>setIsAlert(false)}>
                         <div className="bg-[#1C202C] p-[12px] space-y-[12px] text-white rounded-[8px]">
                             <div className="text-center font-semibold">Are you sure want to delete the Voucher?</div>
                             <div className="flex space-x-[12px] mt-[40px]">
@@ -291,14 +292,14 @@ if (disPer=='Discount Percentage' || usaType=='Usability Type' || val=='Validity
 
 
 
-                </div >
-                <div className='mt-[12px] flex space-x-[40px] text-white text-[14px] h-[73vh]'>
-                    <div className="bg-[#1C202C] border-2 overflow-auto border-[#FFFFFF] rounded-[16px] w-full">
+                </div>
+                <div className='mt-[12px] flex space-x-[40px] text-white text-[14px] h-[60vh]'>
+                    <div className="bg-[#1C202C] border-[2px] overflow-auto border-[#FFFFFF] rounded-[16px] w-full">
                         <VoucherHtable setRenderComponent={setRenderComponent} setAppliedJobBack={setAppliedJobBack} data={data} onDelete={onDelete} />
                     </div>
 
                 </div>
-            </div >
+            </div>
 
 
         </>
@@ -340,7 +341,7 @@ const VoucherHtable = ({ setRenderComponent, setAppliedJobBack, data,onDelete })
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.createdDate}</td>
                                 <td className="px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff]">{ele.expiryDate}</td>
                                 <td className={`px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff] ${ele.voucherStatus === 'Active' ? 'text-[#00e262]' : 'text-[#ff5757]'}`}>{ele.voucherStatus}</td>
-                                <td className={`px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff] ${ele.voucherStatus === 'Active' ? 'underline cursor-pointer' : ''}`}
+                                <td className={`px-[12px] text-center border-r border-b border-[#2A2F41] border-r-[#ffffff] ${ele.voucherStatus === 'Active' ? 'underline cursor-pointer active:text-[#00d8ff]' : ''}`}
                                 onClick={
                                     ()=>{
                                         navigator.clipboard.writeText(ele.voucherCode).then(() => {
@@ -355,7 +356,7 @@ const VoucherHtable = ({ setRenderComponent, setAppliedJobBack, data,onDelete })
 
 
 
-                                <td className={`px-[12px] text-center  border-b border-[#2A2F41] ${ele.voucherStatus === 'Active' ? 'underline cursor-pointer' : ''}`}
+                                <td className={`px-[12px] text-center  border-b border-[#2A2F41] ${ele.voucherStatus === 'Active' ? 'underline cursor-pointer active:text-red-600' : ''}`}
                                 onClick={()=>onDelete(i)}
                                 >{ele.voucherStatus == 'Active' ? 'Delete' : '-'}</td>
 

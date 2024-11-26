@@ -55,21 +55,24 @@ const VerificationPage = ({setHeading,setRenderComponent}) => {
           onChange={(e) => handleInputChange(e.target.value, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
           maxLength="1"
-          className="w-[56px] h-[60px]  text-center text-2xl bg-[#1C202C] text-white border-[2px]   border-[#2a2f41] rounded-[8px] focus:outline-none"
+          className="w-[40px] h-[40px]  text-center text-2xl bg-[#1C202C] text-white border-[2px]   border-[#2a2f41] rounded-[8px] focus:outline-none"
         />
       ))}
     </div>
 
-    <button
-    disabled={otp[otp.length-1]===""}
-    className={`py-[12px] mb-[12px] mt-[40px] w-[700px] bg-[#1C202C] font-bold text-lg rounded-[8px] text-white  ${otp[otp.length-1]!="" ? 'hover:text-[#00d8ff] hover:border-2  border-[#00D8ff] active:bg-[#00d8ff] active:text-black' : ' bg-[#6290c0]' }`}
-    >
-      {otp[otp.length-1]!="" ? <Link  href='/admin'>Verify</Link>:'Verify'}
-      
-    </button>
+    <Link
+  href={otp[otp.length - 1] !== "" ? "/admin" : "#"}
+  className={` h-[40px] mb-[12px] mt-[40px] w-[700px] rounded-[8px] font-bold text-lg text-white flex justify-center items-center ${
+    otp[otp.length - 1] !== ""
+      ? "bg-[#1C202C] hover:text-[#00d8ff] hover:border-2 border-[#00D8ff] active:bg-[#00d8ff] active:text-black"
+      : "bg-[#6290c0] pointer-events-none"
+  }`}
+>
+  Verify
+</Link>
 
     <button
-      className='w-[700px] py-[12px] bg-[#6290c0] text-white  rounded-[8px] font-semibold  
+      className='w-[700px] px-[12px] h-[40px] bg-[#6290c0] text-white  rounded-[8px] font-semibold  
 '
     >
       Resend Code
