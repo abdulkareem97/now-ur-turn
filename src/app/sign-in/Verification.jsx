@@ -72,13 +72,13 @@ const VerificationPage = ({setHeading,setRenderComponent}) => {
 </Link>
 
     <button
-      className='w-[700px] px-[12px] h-[40px] bg-[#6290c0] text-white  rounded-[8px] font-semibold  
+      className='w-[700px] px-[12px] h-[40px] bg-[#6290c0] text-white  rounded-[8px] text-[14px] font-semibold  
 '
     >
       Resend Code
     </button>
 
-    <p className=" text-white mt-[12px]">Resend Code will be available in 59sec</p>
+    <p className=" text-white mt-[12px] text-[14px]">Resend Code will be available in 59sec</p>
   </div>
 </div>
 
