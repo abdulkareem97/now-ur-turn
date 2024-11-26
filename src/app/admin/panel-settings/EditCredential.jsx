@@ -76,7 +76,7 @@ function EditCredential({ setHeading, setRenderComponent, editProfile, profiles,
            
           return(
           <div key={ele.key} className="w-full">
-            <div className="w-full space-x-[32px] bg-[#0D0D19] rounded-[8px]">
+            <div className="w-full space-x-[12px] bg-[#0D0D19] rounded-[8px]">
               <label
                 htmlFor={ele.key}
                 className="text-[#FFE683] w-[144px] inline-block px-[12px]"
