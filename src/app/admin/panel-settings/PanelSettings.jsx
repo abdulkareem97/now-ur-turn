@@ -398,7 +398,7 @@ const PanelSettings = ({ setRenderComponent, src, page, setHeading, AppliedJobBa
                                         <span className="text-[#FFE683]  w-[110px]">
                                             {ele.label}
                                         </span>
-                                        <span className='px-[6px]'>:</span>
+                                        <span className='px-[6px] pr-[12px]'>:</span>
                                         <span>{ele.value}</span>
                                     </div>
                                 
