@@ -79,14 +79,14 @@ const VerificationDeleteAdmin = ({setHeading,setRenderComponent,renderComponent}
       onClick={handleVerify} 
       disabled={!(otp[otp.length-1]!="")}
 
-      className={`py-[12px] mb-[12px] mt-[40px] w-[700px] bg-[#1C202C] font-bold text-[14px] rounded-[8px] text-white  ${otp[otp.length-1]!=""  ? 'hover:text-[#00d8ff] hover:border-2  border-[#00D8ff] active:bg-[#00d8ff] active:text-black' : ' bg-[#6290c0]' }`}
+      className={` mb-[12px] mt-[40px] w-[700px] h-[40px] bg-[#1C202C] font-semibold text-[14px] rounded-[8px] text-white  ${otp[otp.length-1]!=""  ? 'hover:text-[#00d8ff] hover:border-2  border-[#00D8ff] active:bg-[#00d8ff] active:text-black' : ' bg-[#6290c0]' }`}
     >
       Verify
     </button>
 
     <button
       onClick={handleResend}
-      className='w-[700px] py-[12px] bg-[#6290c0] text-white  rounded-[8px] font-semibold  
+      className='w-[700px]  bg-[#6290c0] text-white  rounded-[8px] font-semibold  h-[40px]
 '
     >
       Resend Code
