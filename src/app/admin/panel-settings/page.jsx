@@ -131,7 +131,7 @@ function Page() {
           {heading}
         </h1>
 
-        <div className="content px-[40px] mt-[12px]">{renderCurrentComponent()}</div>
+        <div className="content px-[40px] mt-[60px]">{renderCurrentComponent()}</div>
       </main>
     </>
   );
