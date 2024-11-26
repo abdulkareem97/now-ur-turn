@@ -69,7 +69,7 @@ function EditCredential({ setHeading, setRenderComponent, editProfile, profiles,
 
   return (
     <div>
-      <div className="bg-[#1C202C] w-[700px] flex flex-col justify-center items-center pt-[px]  mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[8px] p-[12px] space-y-[12px]">
+      <div className="bg-[#1C202C] w-[700px] flex flex-col justify-center items-center pt-[px]  mx-auto border-[2px] border-[#2a2f41] pb-[12px] rounded-[16px] p-[12px] space-y-[12px]">
         {/* Render input fields for each profile attribute */}
         {profile.map((ele) => { 
           if(ele.label=="Password") return

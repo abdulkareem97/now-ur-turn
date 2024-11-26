@@ -59,7 +59,7 @@ function ForgetPassword({setHeading,setRenderComponent}) {
                     onChange={handleChange}
 
                     placeholder="Enter your new password"
-                    className=" placeholder:text-[#6290c0] w-full mt-[6px]  p-[12px] rounded-[8px] outline-none bg-[#0D0D19]  "
+                    className=" placeholder:text-[#6290c0] w-full mt-[6px]  h-[40px] px-[12px] rounded-[8px] outline-none bg-[#0D0D19]  "
                    
                   />
                 </div>
@@ -71,7 +71,7 @@ function ForgetPassword({setHeading,setRenderComponent}) {
                     value={newPassword.sNP}
                     onChange={handleChange}
                     placeholder="Re-enter your new password"
-                    className=" placeholder:text-[#6290c0] w-full p-[12px] rounded-[8px] outline-none bg-[#0D0D19] "
+                    className=" placeholder:text-[#6290c0] w-full h-[40px] px-[12px] rounded-[8px] outline-none bg-[#0D0D19] "
                    
                   />
                 </div>
