@@ -104,7 +104,7 @@ const BarChart = ({ data }) => {
   }, [data]);
 
   return (
-    <div className=" w-[70vw]">
+    <div className=" w-[65vw]">
       <canvas id="chart" ref={chartRef}></canvas>
     </div>
   );

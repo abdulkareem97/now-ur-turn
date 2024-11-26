@@ -211,7 +211,7 @@ const Dashboard = ({ setHeading }) => {
       </div>
       <div className="">
 
-        <div className="overflow-auto text-white flex justify-evenly space-x-[12px]">
+        <div className=" text-white flex justify-evenly space-x-[12px]">
           {/* <h1 className="text-center text-2xl font-bold pt-8">Bar Chart Example</h1> */}
           <BarChart data={chartData} />
           <Sidebar />

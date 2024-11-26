@@ -17,7 +17,7 @@ export default function Home() {
                       <h1 className="text-[#FFE683] text-[16px] text-center font-semibold" style={{ color: "#ffe683" }}>
                         {heading}
                       </h1>
-                      <div className="content px-[40px] mt-[60px] ">
+                      <div className="content px-[40px] mt-[60px] h-[73vh] overflow-auto ">
                       <Dashboard setHeading={setHeading} />
                        
                 
